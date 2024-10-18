@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '03_Portfolio';
+
+  buttonClicked() {
+    alert('Knopf gedrückt');
+  }
+
 }
