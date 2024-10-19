@@ -1,8 +1,10 @@
 import {
   BrowserModule,
-  DOCUMENT,
   DomRendererFactory2
-} from "./chunk-AC5S6XWW.js";
+} from "./chunk-CDV2XKRY.js";
+import {
+  DOCUMENT
+} from "./chunk-GGLGWKTL.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionScheduler,
