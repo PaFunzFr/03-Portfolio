@@ -1,9 +1,31 @@
+@import '../../styles/variables_color';
+@import '../../styles/variables_font';
+@import '../../styles/mixins';
+
 header {
     position: fixed;
+    display: flex;
+    justify-content: space-between; /* Verteilt den Platz zwischen den Elementen */
+    align-items: center;
+    width: 100%;
     z-index: 99;
+    color: $color_blue_1;
+    font-weight: $fw_bold;
+    letter-spacing: 3pt;
+    height: 60px;
+    margin-top: 5px;
+
+    div {
+        padding: 0 10px;
+    }
+
+    img {
+        height: 50px;
+    }
 }
 
-.height-60px {
+.mainLogo {
     display: flex;
-    height: 60px;
+    gap: 10px;
+    align-items: center;
 }

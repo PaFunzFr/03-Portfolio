@@ -1,0 +1,6 @@
+
+@mixin chart_style($bg-color, $ft-color, $stroke_weight) {
+    background: $bg-color;
+    stroke: $stroke_weight;
+    color: $ft-color;
+}
