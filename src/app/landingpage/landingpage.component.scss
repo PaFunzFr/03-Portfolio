@@ -1,0 +1,21 @@
+.landingpage {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: hsla(0, 0, 87, 1);
+    color: rgba(23, 30, 41, 1);
+    align-items: center;
+    justify-content: center; 
+
+    span {
+        color: rgba(177, 140, 97, 1);
+    }
+    
+}
+
+
+.welcomeMessage {
+    position: relative;
+    max-width: 600px;
+}
