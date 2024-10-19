@@ -4,3 +4,9 @@
     stroke: $stroke_weight;
     color: $ft-color;
 }
+
+@mixin flex-centered() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
