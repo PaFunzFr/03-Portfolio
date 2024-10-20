@@ -3,55 +3,49 @@
 @import '../../styles/mixins';
 
 .hero {
-    display: flex;
+    @include flex-centered();
     position: relative;
-    justify-content: center;
     top: 200vh;
-    width: 100%;
     height: 100vh;
     background: $gradient_hero;
-    z-index:88;
+    z-index: 10;
     overflow: hidden;
 }
 
-.heroImgs {
+.heroImages {
+    @include flex-centered();
     position: absolute;
-    bottom: 30vh;
-    width: 90%;
-    max-width: 1000px;
+    width: 100%;
     height: 70vh;
-    display: flex;
-    justify-content: center; 
-    overflow: hidden; 
+    top: 0vh;
+}
 
-    
-    .des-img {
+.des-img, .dev-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
 
-        width: 50%; 
-        height: 100%;
-        background-image: url('/assets/img/hero_des.png');
-        background-size: cover;
-        background-position: right; 
-        transform: translateX(0%);
-    }
+.des-img {
+    clip-path: inset(0 50% 0 0);
+    background-image: url('/assets/img/hero_des.png');
+}
 
-    .dev-img {
-        position: relative; 
-        width: 50%; 
-        height: 100%;
-        background-image: url('/assets/img/hero_dev.png');
-        background-size: cover;
-        background-position: right; 
-        transform: translateX(50%);
-    }
+.dev-img {
+    clip-path: inset(0 0 0 50%);
+    background-image: url('/assets/img/hero_dev.png');
 }
 
 .heroText {
+    width: clamp(200px, 50%, 800px);
     display: flex;
     padding: 20px;
     position: absolute;
     top: 70vh;
-    max-width: 1000px;
+   // max-width: 1000px;
     color: $color_grey_1;
     font-weight: $fw-ethin;
     text-align: left;
