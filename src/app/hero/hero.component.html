@@ -1,9 +1,18 @@
 <div class="hero">
 
     <div class="heroImages">
-        <div class="des-img"></div>
-        <div class="dev-img"></div>
-    </div>
+        <div
+          class="des-img" [ngStyle]="{
+            'clip-path': 'inset(0 ' + leftClip + '% 0 0)',
+            'transform': 'translateX(' + transformX + 'px)'
+          }">
+        </div>
+        <div
+          class="dev-img" [ngStyle]="{
+            'clip-path': 'inset(0 0 0 ' + rightClip + '%)',
+            'transform': 'translateX(' + transformX + 'px)'
+          }">
+        </div>
 
     <div class="heroText">
         <p>[…] gelernter <span>Architekt</span>, der sich auf die <span>Digitalisierung des Bauwesens</span> spezialisiert hat.

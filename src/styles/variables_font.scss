@@ -8,8 +8,8 @@ $fw_ebold: 900;
 
 //FONT SIZES
 
-$fs_small: 20pt;
-$fs_medium: 24pt;
-$fs_headline: 64pt;
-$fs_about2: 96pt;
-$fs_about: 128pt;
+$fs_small: calc(10px + 0.5vw);
+$fs_medium: calc(18px + 0.8vw);
+$fs_headline: calc(40px + 2vw);
+$fs_about2: calc(60px + 3vw);
+$fs_about: calc(80px + 4vw);
