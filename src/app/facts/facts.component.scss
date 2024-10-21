@@ -1,0 +1,14 @@
+@import '../../styles/variables_color';
+@import '../../styles/variables_font';
+@import '../../styles/mixins';
+
+.facts {
+    z-index: 90;
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    overflow: hidden;
+    background: red;
+    opacity: 0.5;
+    @include flex-centered();
+}
