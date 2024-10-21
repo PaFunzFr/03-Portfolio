@@ -17,7 +17,6 @@
     span {
         color: $color_gold_1;
     }
-
 }
 
 .welcomeMessage {
@@ -36,8 +35,53 @@
         transition: linear 100ms;
     }
 }
-/* TEST
-h2 {
-    @include chart_style($color_blue_2, white, 20pt);
+
+.scrollMouse {
+    @include flex-centered();
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 5vh;
+
+    .mouseBody {
+        @include flex-centered();
+        height: 50px;
+        width: 30px;
+        border: $color_blue_2 solid 2px;
+        border-radius: 30px;
+
+        .mouseWheel {
+            margin-top: 5px;
+            height: 20px;
+            width: 5px;
+            background: $color_grey_2;
+            border-radius: 3px;
+            animation: wheelhop 3s ease infinite;
+
+            @keyframes wheelhop {
+                0% {
+                    transform: translateY(0) scaleY(1);
+                    opacity: 1;
+                }
+                50% {
+                    transform: translateY(7px) scaleY(0.8);
+                    opacity: 0;
+                }
+                75% {
+                    transform: translateY(7px) scaleY(1);
+                    opacity: 0; 
+                }
+                100% {
+                    transform: translateY(0) scaleY(1);
+                    opacity: 1; 
+                }
+            }
+        }
+    }
+
+    p {
+        color: $color_grey_2;
+        font-size: $fs_small;
+        line-height: 0;
+    }
 }
-    */

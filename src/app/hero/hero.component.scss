@@ -45,7 +45,7 @@
     position: relative;
     justify-content: center;
     width: 100%;
-    gap: 25%;
+    gap: 30%;
     z-index: 10;
 
     .des-title,
@@ -80,15 +80,16 @@
 
 .des-title {
     margin: 0 0 0 70px;
+    text-align: right;
     h2 {
-      color: $color_blue_1;
+        color: $color_orange_1;
     }
 }
 
 .dev-title {
     margin: 0 70px 0 0;
     h2 {
-        color: $color_orange_1;
+        color: $color_blue_1;
     }
 }
 

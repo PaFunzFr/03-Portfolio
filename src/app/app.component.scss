@@ -18,6 +18,5 @@
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    transition: height 0.5s ease;
+    transition: height 0.2s smooth, opacity 20s ease, filter 5s ease;
 }
-

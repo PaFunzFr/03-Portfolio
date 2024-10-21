@@ -3,7 +3,13 @@
 
 <main>
     <div class="about" [style.height]="aboutHeight + 'vh'">
-        <p>ABOUT</p>
+        <p
+            [ngStyle]="{
+                'opacity': aboutOpacity,
+                'transform': 'scale(' + aboutScale + ')',
+                'filter': 'blur(' + aboutBlur + 'px)',
+            }"
+            >ABOUT</p>
     </div>
 
     <app-hero></app-hero>
