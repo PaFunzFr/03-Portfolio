@@ -16,8 +16,8 @@ export class AppComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const scrollY = window.scrollY; // current scroll Y position
-    const viewportHeight = window.innerHeight; // viewport height
+    const scrollY = window.scrollY; 
+    const viewportHeight = window.innerHeight; 
 
     // calc new height (vh)
     // 100vh = 100% of viewport height
