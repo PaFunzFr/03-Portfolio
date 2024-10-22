@@ -121,9 +121,6 @@
   }
 
 .line {
-    display: flex;
-    height: 0.5px;
-    width: 100%;
+    @include line(100%);
     transform: translateY(60vh);
-    background: $color_grey_2;
 }

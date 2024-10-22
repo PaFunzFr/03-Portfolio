@@ -32,11 +32,23 @@
     line-height: 1.5;
 }
 
-@mixin topic-background () {
-    
+@mixin topic-background ($height) {
+    position: absolute;
+    background-color: $color_grey_1;
+    margin: 0;
+    height: $height;
+    width: 100%;
+    z-index: 3;
 }
 
 @mixin absolute-width-100 () {
     position: absolute;
     width: 100%;
+}
+
+@mixin line ($width) {
+    display: flex;
+    height: 0.5px;
+    width: $width;
+    background: $color_grey_2;
 }
