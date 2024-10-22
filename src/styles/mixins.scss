@@ -9,3 +9,27 @@
     display: flex;
     justify-content: center;
 }
+
+@mixin topic-title ($title_color) { 
+    font-size: $fs_headline;
+    font-weight: $fw_thin;
+    color: $title_color;
+    letter-spacing: 7px;
+}
+
+@mixin topic-layout ($height, $background) { 
+    height: $height;
+    overflow: hidden;
+    background: $background;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+@mixin topic-background () {
+    
+}
+
+@mixin absolute-width-100 () {
+    position: absolute;
+    width: 100%;
+}

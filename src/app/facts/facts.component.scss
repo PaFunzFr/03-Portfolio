@@ -3,12 +3,34 @@
 @import '../../styles/mixins';
 
 .facts {
-    z-index: 90;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
     position: relative;
-    height: 50vh;
-    width: 100%;
-    overflow: hidden;
-    background: red;
-    opacity: 0.5;
-    @include flex-centered();
+    @include topic-layout(70vh, $color_grey_1);
+
+    .facts-content {
+        width: 50%;
+        padding: 0 20px 0 20px;
+        p {
+            font-weight: $fw-thin;
+            font-size: $fs_small;
+            color: $color_grey_2;
+            line-height: 1.5;
+        }
+    }
 }
+
+.topic-background {
+    position: absolute;
+    background-color: $color_gold_1;
+    margin: 0;
+    height: 70vh;
+    width: 100%;
+    z-index: 3;
+}
+
+.topic-title {
+    @include topic-title($color_blue_2);
+}
+
