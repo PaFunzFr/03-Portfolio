@@ -2,30 +2,64 @@
 @import '../../styles/variables_font';
 @import '../../styles/mixins';
 
+
+.centeredContainer {
+    @include flex-centered();
+}
+
 .facts {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
     z-index: 10;
     position: relative;
-    @include topic-layout(70vh, $color_grey_1);
+    max-width: 1200px;
+    gap: 40px;
+
+    @include topic-layout(80vh, $color_grey_1);
+
+    .facts-bike,
+    .facts-content {
+        margin: 10vh 20px 0 20px;
+        height: 100%;
+        max-height: 40vh;
+    }
+
+    .facts-bike {
+        background-image: url('/assets/img/facts_bike.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        width: 100%;
+    }
 
     .facts-content {
-        width: 50%;
-        padding: 0 20px 0 20px;
-        p {
-            font-weight: $fw-thin;
-            font-size: $fs_small;
-            color: $color_grey_2;
-            line-height: 1.5;
-        }
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+
+            p {
+                @include topic-text();
+            }
+    }
+
+    @media screen and (max-width: 1000px) {
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto auto; 
+        justify-items: center;
+        
+            .facts-bike,
+            .facts-content {
+                align-self: start;
+                margin: 4vw 20px 0 20px;
+            }
     }
 }
 
 .topic-background {
     position: absolute;
-    background-color: $color_gold_1;
+    background-color: $color_grey_1;
     margin: 0;
-    height: 70vh;
+    height: 80vh;
     width: 100%;
     z-index: 3;
 }

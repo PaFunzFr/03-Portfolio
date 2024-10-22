@@ -25,6 +25,13 @@
     margin-right: 60px;
 }
 
+@mixin topic-text () { 
+    font-weight: $fw-thin;
+    font-size: $fs_small;
+    color: $color_grey_2;
+    line-height: 1.5;
+}
+
 @mixin topic-background () {
     
 }
