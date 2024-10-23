@@ -7,13 +7,6 @@
     @include flex-centered();
 }
 
-.skills {
-    @include topic-layout(100vh, $color_grey_1);
-    z-index: 10;
-    position: relative;
-    max-width: 1200px;
-}
-
 .topic-background {
     @include topic-background(100vh);
 }
@@ -23,39 +16,106 @@
     @include topic-title($color_blue_2);
 }
 
-.containerSkill {
+.skills {
+    @include topic-layout(100vh, $color_grey_1);
+    z-index: 10;
     position: relative;
     width: 100%;
-    height: 0;
-    padding-top: 60%; // padding hack / aspect ratio
-    max-height: 60vh;
+    max-width: 1200px;
+}
 
-    .graph-lines {
+.containerSkill {
+    position: relative;
+    height: 0;
+    padding-top: 40%; // padding hack / instead of aspect ratio
+    margin: 0 0 5vh 0;
+
+    @media screen and (max-width: 768px) {
+        padding-top: 55%;
+        margin: 0 0 2vh 0;
+    }
+
+    .skill-graph {
         position: absolute;
-        top: 0;  // re-aligning to top
+        display: flex;
+        top: 0;
         height: 100%;
         width: 100%;
+        justify-content: space-between;
 
-        .line-v {
-            @include line-v(100%, solid);
-        }
-
-        .lines-h {
-            position: absolute;
+        div {
             display: flex;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            justify-content: space-between;
             flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            align-self: flex-end;
+            width: 18%;
+            height: 95%;  // percentage height of skill
+            bottom: 0;
+            background: $gradient_blue_1;
+            border-radius: 2vw 2vw 0 0;
+            border: $color_blue_4 solid 0.2px;
+            box-shadow: inset 0 6px 5px rgba(255, 255, 255, 0.4);
+            
+            p {
+                margin: 0;
+                color: $color_grey_1;
 
-            div {
-                @include line-h(100%, dotted);
-                
-                &:last-child {
-                    @include line-h(100%, solid);
+                &:first-child {
+                    font-size: $fs_headline;
+                    font-weight: $fw-ebold;
+                    span {
+                        font-size: $fs_smallest;
+                    }
                 }
+                &:last-child {
+                    font-size: $fs_small;
+                    font-weight: $fw-bold;
+                    padding-bottom: 2vw;
+                }
+            }
+            
+            &:first-child {
+                margin-left: 5%;
+            }
+
+            &:last-child {
+                margin-right: 5%;
             }
         }
     }
+
+    .graph-lines {
+        position: absolute;
+        top: 0;  // padding hack / re-aligning to top
+        height: 100%;
+        width: 100%;
+
+            .line-v {
+                @include line-v(100%, solid);
+            }
+
+            .lines-h {
+                position: absolute;
+                display: flex;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                justify-content: space-between;
+                flex-direction: column;
+
+                div {
+                    @include line-h(100%, dotted);
+                    
+                    &:last-child {
+                        @include line-h(100%, solid);
+                        z-index:1;
+                    }
+                }
+            }
+    }
+}
+
+.skills-content {
+    @include topic-text();
 }

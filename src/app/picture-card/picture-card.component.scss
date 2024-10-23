@@ -7,16 +7,18 @@
     height: 20vh;
     // background-color: $color_blue_2;
     background-size: cover;
+    background-image: '';
     background-position: bottom;
     background-repeat: no-repeat;
     border: $color_grey_1 6px solid;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.7s ease, transform 0.2s linear;
     border-radius: 20px;
 
 
     &:hover {
-        box-shadow: 0 2px 3px $color_blue_2;
+        box-shadow: 0 3px 5px $color_blue_2;
         cursor: pointer;
+        transform: translateY(-2px);
     }
         @media screen and (max-width: 1000px) {
             border: $color_grey_1 4px solid;
