@@ -1,0 +1,61 @@
+@import '../../styles/variables_color';
+@import '../../styles/variables_font';
+@import '../../styles/mixins';
+
+
+.centeredContainer {
+    @include flex-centered();
+}
+
+.skills {
+    @include topic-layout(100vh, $color_grey_1);
+    z-index: 10;
+    position: relative;
+    max-width: 1200px;
+}
+
+.topic-background {
+    @include topic-background(100vh);
+}
+
+.topic-title {
+    padding: 5vh 0 3vh 0;
+    @include topic-title($color_blue_2);
+}
+
+.containerSkill {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 60%; // padding hack / aspect ratio
+    max-height: 60vh;
+
+    .graph-lines {
+        position: absolute;
+        top: 0;  // re-aligning to top
+        height: 100%;
+        width: 100%;
+
+        .line-v {
+            @include line-v(100%, solid);
+        }
+
+        .lines-h {
+            position: absolute;
+            display: flex;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: space-between;
+            flex-direction: column;
+
+            div {
+                @include line-h(100%, dotted);
+                
+                &:last-child {
+                    @include line-h(100%, solid);
+                }
+            }
+        }
+    }
+}

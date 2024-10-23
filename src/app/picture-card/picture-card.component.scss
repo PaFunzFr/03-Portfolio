@@ -8,6 +8,7 @@
     // background-color: $color_blue_2;
     background-size: cover;
     background-position: bottom;
+    background-repeat: no-repeat;
     border: $color_grey_1 6px solid;
     transition: box-shadow 0.3s ease;
     border-radius: 20px;
@@ -15,6 +16,7 @@
 
     &:hover {
         box-shadow: 0 2px 3px $color_blue_2;
+        cursor: pointer;
     }
         @media screen and (max-width: 1000px) {
             border: $color_grey_1 4px solid;

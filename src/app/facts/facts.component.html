@@ -1,25 +1,24 @@
 <div class="topic-background"></div>
 
 <div class="centeredContainer">
-        <div class="facts">
-            <div class="facts-bike">
-                <div class="line"></div>
-            </div>
+    <div class="facts">
+        <div class="facts-bike">
+        <div class="line"></div>
+    </div>
 
-            <div class="facts-content">
-                <div class="topic-title">RANDOM FACTS</div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor voluptatibus temporibus,
-                    ea repellendus qui explicabo sit et recusandae, distinctio voluptate officiis,
-                    repellat numquam beatae. Illum consequatur quas ea possimus repellat.
-                </p>
-            </div>
+    <div class="facts-content">
+        <div class="topic-title">RANDOM FACTS</div>
+            <p>Wenn ich mich nicht meiner Berufung widme findet man mich sehr oft unter freiem Himmel.
+                Ob zu Fuß, auf dem Gravelbike oder unterwegs mit dem Camper spielt dabei keine Rolle.
+                Das Erlebte in Bild und Video festzuhalten ist Teil der Reise.
+            </p>
         </div>
+    </div>
 
-        <div class="facts-picture-gallery">
-            <app-picture-card
-                    *ngFor="let i of numbers" 
-                    [backgroundImage]="pictures[i]">
-            </app-picture-card>
-        </div>
-
+    <div class="facts-picture-gallery">
+        <app-picture-card
+                *ngFor="let i of numbers" 
+                [backgroundImage]="factsPictures[i]">
+        </app-picture-card>
+    </div>
 </div>

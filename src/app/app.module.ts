@@ -9,6 +9,7 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { HeroComponent } from './hero/hero.component';
 import { FactsComponent } from './facts/facts.component';
 import { PictureCardComponent } from './picture-card/picture-card.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PictureCardComponent } from './picture-card/picture-card.component';
     LandingpageComponent,
     HeroComponent,
     FactsComponent,
-    PictureCardComponent
+    PictureCardComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,

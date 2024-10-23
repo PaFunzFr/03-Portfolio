@@ -11,21 +11,32 @@ header {
     z-index: 99;
     color: $color_blue_1;
     font-weight: $fw_bold;
-    letter-spacing: 3pt;
+    letter-spacing: 2pt;
+    line-height: 10pt;
     height: 60px;
-    margin-top: 5px;
 
-    div {
-        padding: 0 10px;
-    }
+        div {
+            padding: 0 10px;
+        }
 
-    img {
-        height: 50px;
-    }
+        img {
+            height: 50px;
+        }
+        
+        img:last-child {
+            height: 30px;
+        }
 }
 
 .mainLogo {
     display: flex;
     gap: 10px;
     align-items: center;
+
+    .name {
+        @media screen and (max-width: 1500px) {
+            display: none;
+        }
+    }
 }
+

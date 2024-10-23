@@ -46,9 +46,14 @@
     width: 100%;
 }
 
-@mixin line ($width) {
+@mixin line-h ($width, $type) {
     display: flex;
-    height: 0.5px;
+    border-top: 0.5px $type $color_grey_2; 
     width: $width;
-    background: $color_grey_2;
+}
+
+@mixin line-v ($height, $type) {
+    display: flex;
+    border-left: 0.5px $type $color_grey_2; 
+    height: $height; 
 }

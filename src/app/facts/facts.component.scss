@@ -80,9 +80,9 @@
 }
 
 .line {
-    @include line(200%);
+    @include line-h(200%, solid);
     position: absolute;
-    bottom: 5px;
+    bottom: 6px;
     box-shadow: 0 2px 4px $color_blue_2;
     transform-origin: 9% 100%;
     animation: rotateLine 3s infinite alternate;
@@ -97,6 +97,14 @@
         100% {
             transform: rotate(3deg);
         }
+    }
+
+    @media screen and (max-width: 1000px) {
+        bottom: 5px;
+    }
+
+    @media screen and (max-width: 500px) {
+        bottom: 2px;
     }
 }
 
@@ -115,6 +123,4 @@
         grid-template-columns: 1fr 1fr;
         gap: 3px 10px;
     }
-
 }
-

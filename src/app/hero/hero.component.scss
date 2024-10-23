@@ -121,6 +121,6 @@
   }
 
 .line {
-    @include line(100%);
+    @include line-h(100%, solid);
     transform: translateY(60vh);
 }

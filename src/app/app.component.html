@@ -3,16 +3,16 @@
 
 <main>
     <div class="about" [style.height]="aboutHeight + 'vh'">
-        <p
-            [ngStyle]="{
+        <p [ngStyle]="{
                 'opacity': aboutOpacity,
                 'transform': 'scale(' + aboutScale + ')',
                 'filter': 'blur(' + aboutBlur + 'px)',
             }"
-            >ABOUT</p>
+        >ABOUT</p>
     </div>
 
     <app-hero></app-hero>
     <app-facts></app-facts>
+    <app-skills></app-skills>
     
 </main>
