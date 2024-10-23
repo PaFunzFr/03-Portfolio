@@ -1,0 +1,26 @@
+@import '../../styles/variables_color';
+@import '../../styles/variables_font';
+@import '../../styles/mixins';
+
+.picture-card {
+    width: auto;
+    height: 20vh;
+    // background-color: $color_blue_2;
+    background-size: cover;
+    background-position: bottom;
+    border: $color_grey_1 6px solid;
+    transition: box-shadow 0.3s ease;
+    border-radius: 20px;
+
+
+    &:hover {
+        box-shadow: 0 2px 3px $color_blue_2;
+    }
+        @media screen and (max-width: 1000px) {
+            border: $color_grey_1 4px solid;
+            height: 14vh;
+        }
+        @media screen and (max-width: 700px) {
+            height: 10vh;
+        }
+}

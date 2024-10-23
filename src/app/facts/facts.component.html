@@ -16,10 +16,10 @@
         </div>
 
         <div class="facts-picture-gallery">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <app-picture-card
+                    *ngFor="let i of numbers" 
+                    [backgroundImage]="pictures[i]">
+            </app-picture-card>
         </div>
 
 </div>

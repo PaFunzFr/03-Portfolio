@@ -102,32 +102,19 @@
 
 .facts-picture-gallery {
     position: absolute;
-    margin-top: 55vh;
+    margin-top: 50vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
     width: calc(100% - 120px);
     max-width: 1200px;
     z-index: 10;
+    align-self: center;
     
     @media screen and (max-width: 700px) {
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        gap: 3px 10px;
     }
 
-        div {
-            border-radius: 10px;
-            width: auto;
-            height: 20vh;
-            background-color: $color_blue_2;
-
-                @media screen and (max-width: 1000px) {
-                    height: 14vh;
-                    margin-top: 5vh;
-                }
-                @media screen and (max-width: 700px) {
-                    height: 10vh;
-                    margin-top: 0vh;
-                }
-        }
 }
+
