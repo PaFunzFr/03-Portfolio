@@ -1,0 +1,42 @@
+
+@import '../../styles/variables_color';
+@import '../../styles/variables_font';
+@import '../../styles/mixins';
+
+
+li {
+    position: relative;
+    padding-top: 100%; // padding hack / aspect ratio 1:1
+    @include graph-background($color_blue_4,$gradient_blue_1);
+    border-radius: 2vw; 
+    display: flex;
+
+    .content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        gap: 8px;
+
+        .toolsImage {
+            width: 55%;
+            height: 55%; 
+            background: red; //background-image
+        }
+
+        p {
+            margin: 0;
+            font-size: $fs-smallest;
+            color: $color_grey_1;
+            
+            @media screen and (max-width: 1000px) {
+                    display: none;
+                }
+        }
+    }
+}

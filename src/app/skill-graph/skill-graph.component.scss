@@ -1,0 +1,41 @@
+@import '../../styles/variables_color';
+@import '../../styles/variables_font';
+@import '../../styles/mixins';
+
+* {
+    box-sizing: border-box;
+}
+
+.graph {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    bottom: 0;
+    height: 95%;  // percentage height of skill
+    width: 18%;
+    border-radius: 2vw 2vw 0 0;
+    @include graph-background($color_blue_4,$gradient_blue_1);
+
+
+    p {
+        margin: 0;
+        color: $color_grey_1;
+
+        .percentageSkill {
+            font-size: $fs_headline;
+            font-weight: $fw-ebold;
+        }
+
+        .percentageSymbol {
+            font-size: $fs_smallest;
+        }
+
+        &.nameSkill {
+            font-size: $fs_small;
+            font-weight: $fw-bold;
+            padding-bottom: 2vw;
+        }
+    }
+}

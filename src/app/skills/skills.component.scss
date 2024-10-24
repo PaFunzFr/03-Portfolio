@@ -20,7 +20,6 @@
     @include topic-layout(100vh, $color_grey_1);
     z-index: 10;
     position: relative;
-    width: 100%;
     max-width: 1200px;
 }
 
@@ -34,6 +33,24 @@
     
 }
 
+.tools-list {
+    padding-bottom: 3vw; //padding to next section
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 1%;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+
+        @media screen and (max-width: 600px) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-row: 1fr;
+        }
+    }
+}
+
 .containerSkill {
     position: relative;
     height: 0;
@@ -44,146 +61,48 @@
         padding-top: 55%;
         margin: 0 0 2vh 0;
     }
-
-    .skill-graph {
+    .skill-graph,
+    .graph-lines {
         position: absolute;
-        display: flex;
-        justify-content: space-between;
         top: 0;
         height: 100%;
         width: 100%;
+    }
 
-        div {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            align-self: flex-end;
-            bottom: 0;
-            height: 95%;  // percentage height of skill
-            width: 18%;
-            border-radius: 2vw 2vw 0 0;
-            @include graph-background($color_blue_4,$gradient_blue_1);
-            
-            &:first-child {
-                margin-left: 5%;
-            }
-
-            &:last-child {
-                margin-right: 5%;
-            }
-
-            p {
-                margin: 0;
-                color: $color_grey_1;
-
-                &:first-child {
-                    font-size: $fs_headline;
-                    font-weight: $fw-ebold;
-                        span {
-                            font-size: $fs_smallest;
-                        }
-                }
-                
-                &:last-child {
-                    font-size: $fs_small;
-                    font-weight: $fw-bold;
-                    padding-bottom: 2vw;
-                }
-            }
-        }
+    .skill-graphs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: auto;
+        margin-left: 5.6%;
     }
 
     .graph-lines {
-        position: absolute;
-        top: 0;  // padding hack / re-aligning to top
-        height: 100%;
-        width: 100%;
 
-            .line-v {
-                @include line-v(100%, solid);
-            }
+        .line-v {
+            @include line-v(100%, solid);
+        }
 
-            .lines-h {
-                position: absolute;
-                display: flex;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                justify-content: space-between;
-                flex-direction: column;
+        .lines-h {
+            position: absolute;
+            display: flex;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: space-between;
+            flex-direction: column;
 
-                div {
-                    @include line-h(100%, dotted);
+            div {
+                @include line-h(100%, dotted);
                     
-                    &:last-child {
-                        @include line-h(100%, solid);
-                        z-index:1;
-                    }
+                &:last-child {
+                    @include line-h(100%, solid);
+                    z-index:1;
                 }
             }
+        }
     }
 }
 
 .skills-content {
     @include topic-text();
-}
-
-.tools-list {
-    padding-bottom: 3vw;
-    ul {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        gap: 1%;
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
-
-
-@media screen and (max-width: 1000px) {
-
-    p{
-        display: none;
-        }
-    }
-@media screen and (max-width: 600px) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-row: 1fr;
-}
-
-
-        li {
-            position: relative;
-            padding-top: 100%; // padding hack / aspect ratio 1:1
-            @include graph-background($color_blue_4,$gradient_blue_1);
-            border-radius: 2vw; 
-            display: flex;
-
-            .content {
-                position: absolute;
-                top: 0;
-                left: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: center; 
-                align-items: center;
-                width: 100%;
-                height: 100%;
-   
-                gap: 8px;
-
-                .toolsImage {
-                    width: 55%;
-                    height: 55%; 
-                    background: red; //background-image
-                }
-
-                p {
-                    margin: 0;
-                    font-size: $fs-smallest;
-                    color: $color_grey_1;
-                }
-            }
-        }
-    }
 }

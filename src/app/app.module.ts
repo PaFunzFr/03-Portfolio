@@ -10,6 +10,8 @@ import { HeroComponent } from './hero/hero.component';
 import { FactsComponent } from './facts/facts.component';
 import { PictureCardComponent } from './picture-card/picture-card.component';
 import { SkillsComponent } from './skills/skills.component';
+import { ToolBoxComponent } from './tool-box/tool-box.component';
+import { SkillGraphComponent } from './skill-graph/skill-graph.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { SkillsComponent } from './skills/skills.component';
     HeroComponent,
     FactsComponent,
     PictureCardComponent,
-    SkillsComponent
+    SkillsComponent,
+    ToolBoxComponent,
+    SkillGraphComponent
   ],
   imports: [
     BrowserModule,

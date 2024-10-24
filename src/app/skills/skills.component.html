@@ -18,77 +18,18 @@
                 </div>    
             </section>
 
-            <section class="skill-graph">
-                <div>
-                    <p>95<span>%</span></p>
-                    <p>Design</p>
-                </div>
-                <div>
-                    <p>95<span>%</span></p>
-                    <p>Design</p>
-                </div>
-                <div>
-                    <p>95<span>%</span></p>
-                    <p>Design</p>
-                </div>
-                <div>
-                    <p>95<span>%</span></p>
-                    <p>Design</p>
-                </div>
+            <section class="skill-graphs">
+                <app-skill-graph></app-skill-graph>
+                <app-skill-graph></app-skill-graph>
+                <app-skill-graph></app-skill-graph>
+                <app-skill-graph></app-skill-graph>
             </section>
 
         </section>
 
         <section class="tools-list">
             <ul>
-                <li>
-                    <div class="content">
-                        <div class="toolsImage"></div>
-                        <p>Autodesk Suite</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="content">
-                        <div class="toolsImage"></div>
-                        <p>Autodesk Suite</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="content">
-                        <div class="toolsImage"></div>
-                        <p>Autodesk Suite</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="content">
-                        <div class="toolsImage"></div>
-                        <p>Autodesk Suite</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="content">
-                        <div class="toolsImage"></div>
-                        <p>Autodesk Suite</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="content">
-                        <div class="toolsImage"></div>
-                        <p>Autodesk Suite</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="content">
-                        <div class="toolsImage"></div>
-                        <p>Autodesk Suite</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="content">
-                        <div class="toolsImage"></div>
-                        <p>Autodesk Suite</p>
-                    </div>
-                </li>
+                <app-tool-box *ngFor="let i of [0,1,2,3,4,5,6,7]"></app-tool-box>
             </ul>
         </section>
 
