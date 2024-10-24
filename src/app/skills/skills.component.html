@@ -11,18 +11,12 @@
                 <div class="line-v">
                 </div>
                 <div class="lines-h">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div *ngFor="let i of [0,1,2,3]"></div>
                 </div>    
             </section>
 
             <section class="skill-graphs">
-                <app-skill-graph></app-skill-graph>
-                <app-skill-graph></app-skill-graph>
-                <app-skill-graph></app-skill-graph>
-                <app-skill-graph></app-skill-graph>
+                <app-skill-graph *ngFor="let i of [0,1,2,3]"></app-skill-graph>
             </section>
 
         </section>
