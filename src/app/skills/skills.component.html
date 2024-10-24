@@ -16,7 +16,13 @@
             </section>
 
             <section class="skill-graphs">
-                <app-skill-graph *ngFor="let i of [0,1,2,3]"></app-skill-graph>
+                <app-skill-graph  *ngFor="let i of categories" 
+                    [skillPercentage]="i[0]" 
+                    [skillCategory]="i[1]"
+                    [skillBorder]="i[2]"
+                    [skillBackground]="i[3]"
+                    [ngStyle]="{'height': i[0] + '%'}">
+                </app-skill-graph>
             </section>
 
         </section>

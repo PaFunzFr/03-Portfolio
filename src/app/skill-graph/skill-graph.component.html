@@ -1,10 +1,14 @@
 
-    <div class="graph">
+    <div class="graph"
+    [ngStyle]="{'background': skillBackground,
+                'border' : skillBorder + 'solid 0.2px',
+                'height' : skillPercentage + '%'
+                }">
         <p>
-            <span class="percentageSkill">95</span>
+            <span class="percentageSkill">{{ skillPercentage }}</span>
             <span class="percentageSymbol">%</span>
         </p>
         <p class="nameSkill">
-            Design
+            {{ skillCategory }}
         </p>
     </div>

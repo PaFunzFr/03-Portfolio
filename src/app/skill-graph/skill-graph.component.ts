@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-skill-graph',
@@ -7,12 +7,10 @@ import { Component } from '@angular/core';
 })
 export class SkillGraphComponent {
 
-  categories = [
-    ['95%', 'Design'],
-    ['30%', 'Code'],
-    ['95%', 'CAD / BIM'],
-    ['95%', 'Video'],
-  ]
+  @Input() skillPercentage: string = '';
+  @Input() skillCategory: string = '';
+  @Input() skillBackground: string = '';
+  @Input() skillBorder: string = '';
 
 }
 
