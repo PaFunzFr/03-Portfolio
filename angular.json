@@ -38,8 +38,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/app/styles/variables_color.scss",
-              "src/app/styles/variables_font.scss"
+              "src/styles/variables_color.scss",
+              "src/styles/variables_font.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
