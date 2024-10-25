@@ -17,11 +17,11 @@
 
             <section class="skill-graphs">
                 <app-skill-graph  *ngFor="let i of categories" 
-                    [skillPercentage]="i[0]" 
-                    [skillCategory]="i[1]"
-                    [skillBorder]="i[2]"
-                    [skillBackground]="i[3]"
-                    [ngStyle]="{'height': i[0] + '%'}">
+                    [skillPercentage]="i.percentage" 
+                    [skillCategory]="i.category"
+                    [skillBorder]="i.border"
+                    [skillBackground]="i.background"
+                    [ngStyle]="{'height': i.percentage + '%'}">
                 </app-skill-graph>
             </section>
 

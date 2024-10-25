@@ -1,27 +1,30 @@
 // BLUE
-$color_blue_1: rgba(46, 130, 160, 1);
-$color_blue_2: rgba(23, 30, 41, 1);
-$color_blue_3: rgba(126, 132, 139, 1); // only used for Gradient_blue_1
-$color_blue_4: rgba(136, 184, 201, 1); // only used for Gradient_blue_2
+:root {
 
-//GOLD
-$color_gold_1: rgba(177, 140, 97, 1);
-$color_gold_2: rgba(212, 191, 167, 1); // only used for Gradient
-$color_gold_3: rgba(161, 133, 95, 1); // only used for Icon Education
+    --color_blue_1: rgba(46, 130, 160, 1);
+    --color_blue_2: rgba(23, 30, 41, 1);
+    --color_blue_3: rgba(126, 132, 139, 1);
+    --color_blue_4: rgba(136, 184, 201, 1); 
+    //GOLD
+    --color_gold_1: rgba(177, 140, 97, 1);
+    --color_gold_2: rgba(212, 191, 167, 1); 
+    --color_gold_3: rgba(161, 133, 95, 1); // only used for Icon Education
 
-// GREY
-$color_grey_1: rgba(222, 222, 222, 1); // used for Main Background
-$color_grey_2: rgba(109, 109, 109, 1);
-$color_grey_3: rgba(32, 32, 32, 1);
+    // GREY
+    --color_grey_1: rgba(222, 222, 222, 1); 
+    --color_grey_2: rgba(109, 109, 109, 1);
+    --color_grey_3: rgba(32, 32, 32, 1);
 
-// ORANGE
-$color_orange_1: rgba(238, 140, 27, 1);
-$color_orange_2: rgba(247, 197, 139, 1); // only used for Gradient
+    // ORANGE
+    --color_orange_1: rgba(238, 140, 27, 1);
+    --color_orange_2: rgba(247, 197, 139, 1); 
 
 
-// GRADIENTS
-$gradient_blue_1: linear-gradient(to top, $color_blue_1, $color_blue_4);
-$gradient_blue_2: linear-gradient(to top, $color_blue_2, $color_blue_3);
-$gradient_gold_1: linear-gradient(to top, $color_gold_1, $color_gold_2);
-$gradient_orange_1: linear-gradient(to top, $color_orange_1, $color_orange_2);
-$gradient_hero: linear-gradient(to top, $color_blue_2 70%, hsla(217,28,13,0) 100%);
+    // GRADIENTS
+    --gradient_blue_1: linear-gradient(to top, --color_blue_1, --color_blue_4);
+    --gradient_blue_2: linear-gradient(to top, --color_blue_2, --color_blue_3);
+    --gradient_gold_1: linear-gradient(to top, --color_gold_1, --color_gold_2);
+    --gradient_orange_1: linear-gradient(to top, --color_orange_1, --color_orange_2);
+    --gradient_hero: linear-gradient(to top, --color_blue_2 70%, hsla(217,28,13,0) 100%);
+
+}

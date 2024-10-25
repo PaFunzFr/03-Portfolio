@@ -1,37 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ColorService } from '../services/color.service';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
-export class SkillsComponent {
-// FARBEN ANPASSEN 241024!!!
-  skillColor_Design_1: string ='rgba(46, 130, 160, 1)';
-  skillColor_Design_2: string ='rgba(46, 130, 160, 1)';
+export class SkillsComponent implements OnInit {
 
-  skillColor_Code_1: string ='rgba(238, 140, 27, 1)';
-  skillColor_Code_2: string ='rgba(238, 140, 27, 1)';
+  ratio: number = 60;
 
-  skillColor_Bim_1: string ='rgba(177, 140, 97, 1)';
-  skillColor_Bim_2: string ='rgba(177, 140, 97, 1)';
+  skillBackground(color1: string, color2: string) {
+    return `linear-gradient(to top, ${color1} ${this.ratio}%, ${color2})`;
+  }
 
-  skillColor_Video_1: string ='rgba(23, 30, 41, 1)';
-  skillColor_Video_2: string ='rgba(23, 30, 41, 1)';
-// FARBEN ANPASSEN 241024!!!
+  constructor(private colorService: ColorService) {}
 
-  skillBackground_Design: string ='linear-gradient(to top,' + this.skillColor_Design_1 + ',' + this.skillColor_Design_2 +')';
-  skillBackground_Code: string ='linear-gradient(to top,' + this.skillColor_Design_1 + ',' + this.skillColor_Design_2 +')';
-  skillBackground_Bim: string ='linear-gradient(to top,' + this.skillColor_Design_1 + ',' + this.skillColor_Design_2 +')';
-  skillBackground_Video: string ='linear-gradient(to top,' + this.skillColor_Design_1 + ',' + this.skillColor_Design_2 +')';
+  categories: Array<{ percentage: string;
+                      category: string;
+                      border: string;
+                      background: string
+                    }> = [];
 
+  ngOnInit(): void {
 
+    this.categories = [
+      { 
+        percentage: '95',
+        category: 'Design',
+        border: this.colorService.col.blue.b4,
+        background: this.skillBackground(this.colorService.col.blue.b1, this.colorService.col.blue.b4)
+      },
+      { 
+        percentage: '30',
+        category: 'Code',
+        border: this.colorService.col.orange.o2,
+        background: this.skillBackground(this.colorService.col.orange.o1, this.colorService.col.orange.o2)
+      },
+      { percentage: '90',
+        category: 'BIM',
+        border: this.colorService.col.gold.g2,
+        background: this.skillBackground(this.colorService.col.gold.g1, this.colorService.col.gold.g2)
+      },
+      { percentage: '60',
+        category: 'Video',
+        border: this.colorService.col.blue.b3,
+        background: this.skillBackground(this.colorService.col.blue.b2, this.colorService.col.blue.b3)
+      },
+    ];
 
-  categories = [
-    ['95', 'Design',this.skillColor_Design_1, this.skillBackground_Design],
-    ['30', 'Code',this.skillColor_Code_1, this.skillBackground_Code],
-    ['90', 'BIM',this.skillColor_Bim_1, this.skillBackground_Bim],
-    ['60', 'Video',this.skillColor_Video_1, this.skillBackground_Video],
-  ]
-
+  }
 }
