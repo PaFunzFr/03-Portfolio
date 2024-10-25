@@ -5,14 +5,14 @@ import { ColorService } from './services/color.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { LandingpageComponent } from './landingpage/landingpage.component';
-import { HeroComponent } from './hero/hero.component';
-import { FactsComponent } from './facts/facts.component';
-import { PictureCardComponent } from './picture-card/picture-card.component';
-import { SkillsComponent } from './skills/skills.component';
-import { ToolBoxComponent } from './tool-box/tool-box.component';
-import { SkillGraphComponent } from './skill-graph/skill-graph.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LandingpageComponent } from './components/landingpage/landingpage.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { FactsComponent } from './components/facts/facts.component';
+import { PictureCardComponent } from './components/picture-card/picture-card.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ToolBoxComponent } from './components/tool-box/tool-box.component';
+import { SkillGraphComponent } from './components/skill-graph/skill-graph.component';
 
 @NgModule({
   declarations: [
