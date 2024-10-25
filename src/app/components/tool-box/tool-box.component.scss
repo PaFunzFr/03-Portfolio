@@ -23,13 +23,13 @@ li {
         height: 100%;
         gap: 8px;
 
-        .toolsImage {
+        .toolImage {
             width: 55%;
             height: 55%; 
             background: red; //background-image
         }
 
-        p {
+        .toolName {
             margin: 0;
             font-size: $fs-smallest;
             color: $color_grey_1;

@@ -48,6 +48,7 @@ export class SkillsComponent implements OnInit {
         background: this.skillBackground(this.colorService.col.blue.b2, this.colorService.col.blue.b3)
       },
     ];
-
   }
+
+
 }

@@ -1,6 +1,11 @@
 <li>
     <div class="content">
-        <div class="toolsImage"></div>
-        <p>Autodesk Suite</p>
+        <div class="toolImage"
+             [ngStyle]="{'background-image': 'url(' + tool_image + ')'}">
+        </div>
+        <div class="toolName"
+             [ngStyle]="{'background-image': 'url(' + tool_name + ')'}">
+             Autodesk Suite
+        </div>
     </div>
 </li>

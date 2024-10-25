@@ -34,7 +34,7 @@
         &.nameSkill {
             font-size: $fs_small;
             font-weight: $fw-bold;
-            padding-bottom: 2vw;
+            padding-bottom: calc(2px + 0.5vw);
         }
     }
 }
