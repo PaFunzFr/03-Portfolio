@@ -106,3 +106,8 @@
 .skills-content {
     @include topic-text();
 }
+
+.interactive {
+    cursor: pointer;
+    background-color: lightblue;
+  }
