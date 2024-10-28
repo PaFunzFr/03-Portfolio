@@ -10,7 +10,8 @@ export class SkillGraphComponent {
   @Input() skillPercentage: string = '';
   @Input() skillCategory: string = '';
   @Input() skillBackground: string = '';
-  @Input() skillBorder: string = '';
+  @Input() skillBorderColor: string = '';
+  @Input() skillBorderWidth: string = '';
 
 }
 

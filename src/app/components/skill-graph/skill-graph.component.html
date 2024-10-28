@@ -1,8 +1,11 @@
 
     <div class="graph"
     [ngStyle]="{'background': skillBackground,
-                'border' : skillBorder + 'solid 0.2px',
-                'height' : skillPercentage + '%'
+                'border-top': skillBorderColor + ' ' + skillBorderWidth,
+                'border-left': skillBorderColor + ' ' + skillBorderWidth,
+                'border-right': skillBorderColor + ' ' + skillBorderWidth,
+                'border-bottom': '0px solid transparent', 
+                'height' : skillPercentage + '%',
                 }">
         <p>
             <span class="percentageSkill">{{ skillPercentage }}</span>
