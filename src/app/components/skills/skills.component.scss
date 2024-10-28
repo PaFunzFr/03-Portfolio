@@ -30,7 +30,6 @@
     .topic-background {
         @include topic-background(80vh);
     }
-    
 }
 
 .tools-list {
@@ -48,12 +47,8 @@
             grid-template-columns: repeat(4, 1fr);
             grid-row: 1fr;
         }
-        app-tool-box {
-            transition: opacity 0.8s ease-in-out;
-        }
     }
 }
-
 
 .containerSkill {
     position: relative;

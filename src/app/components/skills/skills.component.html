@@ -35,14 +35,13 @@
 
         <section class="tools-list">
             <ul>
-                <app-tool-box *ngFor="let tool of tool_list"
+                <app-tool-box *ngFor="let tool of tool_list_array"
                 [tool_image]="tool.image"
                 [tool_name]="tool.name"
                 [tool_background]="tool.background"
                 [tool_border]="tool.border"
-                [ngStyle]="{
-                    'opacity': tool_opacity
-                }">
+                [ngStyle]="{'opacity': tool.opacity, 'transition': 'opacity 0.5s ease'}"
+                >
                 </app-tool-box>
             </ul>
         </section>

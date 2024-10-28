@@ -23,6 +23,7 @@
     p {
         margin: 0;
         color: $color_grey_1;
+        pointer-events: none;
 
         .percentageSkill {
             font-size: $fs_headline;
