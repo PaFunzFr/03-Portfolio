@@ -26,7 +26,7 @@ export class SkillsComponent implements OnInit {
                     }> = [];
 
   initialborderWidth: string = 'solid 1pt';
-  initialOpacity: number = 0.9;
+  initialOpacity: number = 0.8;
 
   ngOnInit(): void {
 
@@ -69,7 +69,7 @@ export class SkillsComponent implements OnInit {
       name: this.toolNames[4][i],
       background: this.skillBackground(this.colorService.col.grey.g2, this.colorService.col.grey.g2),
       border: this.colorService.col.grey.g2,
-      opacity: 1
+      opacity: 0.1
 
     }));
   
