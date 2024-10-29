@@ -1,0 +1,33 @@
+@import '../../styles/variables_color';
+@import '../../styles/variables_font';
+@import '../../styles/mixins';
+
+
+.centeredContainer {
+    @include flex-centered();
+}
+
+.topic-background {
+    @include topic-background(calc(50vh + 50vw), $color_blue_2);
+    max-height: calc(1300px + 2vw);
+}
+
+.topic-title {
+    padding: calc(5vh + 5vw) 0 3vh 0;
+    @include topic-title($color_grey_1);
+    text-align: center;
+}
+
+.projects {
+    @include topic-layout(calc(50vh + 50vw), $color_blue_2);
+    z-index: 10;
+    position: relative;
+    max-width: 1000px;
+    width: calc(100% + 120px);
+    max-height: calc(1300px + 2vw);
+}
+.line {
+    position: relative;
+    @include line-h(100%, solid);
+    z-index: 3;
+}

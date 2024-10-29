@@ -13,6 +13,7 @@ import { PictureCardComponent } from './components/picture-card/picture-card.com
 import { SkillsComponent } from './components/skills/skills.component';
 import { ToolBoxComponent } from './components/tool-box/tool-box.component';
 import { SkillGraphComponent } from './components/skill-graph/skill-graph.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SkillGraphComponent } from './components/skill-graph/skill-graph.compon
     PictureCardComponent,
     SkillsComponent,
     ToolBoxComponent,
-    SkillGraphComponent
+    SkillGraphComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

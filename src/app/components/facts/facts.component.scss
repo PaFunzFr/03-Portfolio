@@ -14,7 +14,7 @@
     grid-template-columns: 1fr 1fr; 
     z-index: 10;
     position: relative;
-    max-width: 1200px;
+    max-width: 1000px;
     gap: 40px;
 
         .facts-bike,
@@ -75,7 +75,7 @@
 }
 
 .topic-background {
-    @include topic-background(80vh);
+    @include topic-background(80vh, $color_grey_1);
 }
 
 .topic-title {
@@ -118,7 +118,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
     width: calc(100% - 120px);
-    max-width: 1200px;
+    max-width: 1000px;
     z-index: 10;
     align-self: center;
     

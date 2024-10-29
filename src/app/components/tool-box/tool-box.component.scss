@@ -8,7 +8,7 @@ li {
     position: relative;
     padding-top: 100%; // padding hack / aspect ratio 1:1
     @include graph-background($color_blue_4,$gradient_blue_1);
-    border-radius: 2vw; 
+    border-radius: 2vmin; 
     display: flex;
 
     .content {
@@ -27,12 +27,13 @@ li {
             width: 55%;
             height: 55%;
             background-repeat: no-repeat;
+            filter: sepia(20%);
         }
 
         .toolName {
             margin: 0 0 -7px 0;
             font-size: $fs-smallest;
-            color: $color_grey_1;
+            color: white;
             
             @media screen and (max-width: 1000px) {
                     display: none;

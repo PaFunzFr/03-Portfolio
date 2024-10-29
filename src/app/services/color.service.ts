@@ -11,7 +11,8 @@ export class ColorService {
       b1: '',
       b2: '',
       b3: '',
-      b4: ''
+      b4: '',
+      b5: ''
     },
     gold: {
       g1: '',
@@ -38,6 +39,7 @@ export class ColorService {
       this.col.blue.b2 = getComputedStyle(root).getPropertyValue('--color_blue_2').replace(';', '').trim();
       this.col.blue.b3 = getComputedStyle(root).getPropertyValue('--color_blue_3').replace(';', '').trim();
       this.col.blue.b4 = getComputedStyle(root).getPropertyValue('--color_blue_4').replace(';', '').trim();
+      this.col.blue.b5 = getComputedStyle(root).getPropertyValue('--color_blue_5').replace(';', '').trim();
       
       this.col.gold.g1 = getComputedStyle(root).getPropertyValue('--color_gold_1').replace(';', '').trim();
       this.col.gold.g2 = getComputedStyle(root).getPropertyValue('--color_gold_2').replace(';', '').trim();

@@ -26,7 +26,8 @@ export class SkillsComponent implements OnInit {
                     }> = [];
 
   initialborderWidth: string = 'solid 1pt';
-  initialOpacity: number = 0.8;
+  initialOpacity: number = 0.75;
+  initialBorderColors: string[] = [];
 
   ngOnInit(): void {
 
@@ -57,11 +58,15 @@ export class SkillsComponent implements OnInit {
       { percentage: '60',
         category: 'Video',
         borderColor: this.colorService.col.blue.b3,
-        background: this.skillBackground(this.colorService.col.blue.b2, this.colorService.col.blue.b3),
+        background: this.skillBackground(this.colorService.col.blue.b5, this.colorService.col.blue.b3),
         borderWidth: this.initialborderWidth,
         opacity: this.initialOpacity,
       }
     ];
+
+    // Define initial border colors
+    this.initialBorderColors = this.categories.map(category => category.borderColor);
+
 
     // DEFAULT PLACEHOLDER for toolbar
     this.tool_list_array = this.toolPictures[4].map((image, i) => ({
@@ -179,12 +184,14 @@ export class SkillsComponent implements OnInit {
       this.lastHoveredIndex = index_item; // set index
 
       // reset previous hovered skills
-      this.categories.forEach(item => {
+      this.categories.forEach((item, i) => {
           item.borderWidth = this.initialborderWidth;
+          item.borderColor = this.initialBorderColors[i];
           item.opacity = this.initialOpacity;
         });
 
       this.categories[index_item].borderWidth = 'solid 2pt';
+      this.categories[index_item].borderColor = this.colorService.col.grey.g1;
       this.categories[index_item].opacity = 1;
 
       this.tool_list_array = []; // clean array
@@ -199,8 +206,8 @@ export class SkillsComponent implements OnInit {
         this.tool_list_array.push({
             image: this.toolPictures[index_item][index],
             name: this.toolNames[index_item][index],
-            background: this.categories[index_item].background,
-            border: this.categories[index_item].borderColor,
+            background: this.categories[index_item].background, // ->  optional switch to none
+            border: this.initialBorderColors[index_item],
             opacity: 0
         });
     

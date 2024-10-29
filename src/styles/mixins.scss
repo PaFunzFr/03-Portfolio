@@ -32,9 +32,9 @@
     line-height: 1.5;
 }
 
-@mixin topic-background ($height) {
+@mixin topic-background ($height, $color) {
     position: absolute;
-    background-color: $color_grey_1;
+    background-color: $color;
     margin: 0;
     height: $height;
     width: 100%;
