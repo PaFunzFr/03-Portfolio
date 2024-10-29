@@ -72,7 +72,7 @@ export class SkillsComponent implements OnInit {
     this.tool_list_array = this.toolPictures[4].map((image, i) => ({
       image: image,
       name: this.toolNames[4][i],
-      background: this.skillBackground(this.colorService.col.grey.g2, this.colorService.col.grey.g2),
+      background: this.skillBackground(this.colorService.col.blue.b2, this.colorService.col.blue.b2),
       border: this.colorService.col.grey.g2,
       opacity: 0.1
 
