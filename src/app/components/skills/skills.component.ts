@@ -22,7 +22,11 @@ export class SkillsComponent implements OnInit {
                       borderColor: string;
                       background: string
                       borderWidth: string;
+                      opacity: number;
                     }> = [];
+
+  initialborderWidth: string = 'solid 1pt';
+  initialOpacity: number = 0.9;
 
   ngOnInit(): void {
 
@@ -32,37 +36,43 @@ export class SkillsComponent implements OnInit {
         category: 'Design',
         borderColor: this.colorService.col.blue.b4,
         background: this.skillBackground(this.colorService.col.blue.b1, this.colorService.col.blue.b4),
-        borderWidth: this.initialborderWidth
+        borderWidth: this.initialborderWidth,
+        opacity: this.initialOpacity,
       },
       { 
         percentage: '30',
         category: 'Code',
         borderColor: this.colorService.col.orange.o2,
         background: this.skillBackground(this.colorService.col.orange.o1, this.colorService.col.orange.o2),
-        borderWidth: this.initialborderWidth
+        borderWidth: this.initialborderWidth,
+        opacity: this.initialOpacity,
       },
       { percentage: '90',
         category: 'BIM',
         borderColor: this.colorService.col.gold.g2,
         background: this.skillBackground(this.colorService.col.gold.g1, this.colorService.col.gold.g2),
-        borderWidth: this.initialborderWidth
+        borderWidth: this.initialborderWidth,
+        opacity: this.initialOpacity,
       },
       { percentage: '60',
         category: 'Video',
         borderColor: this.colorService.col.blue.b3,
         background: this.skillBackground(this.colorService.col.blue.b2, this.colorService.col.blue.b3),
-        borderWidth: this.initialborderWidth
+        borderWidth: this.initialborderWidth,
+        opacity: this.initialOpacity,
       }
     ];
-/*
+
+    // DEFAULT PLACEHOLDER for toolbar
     this.tool_list_array = this.toolPictures[4].map((image, i) => ({
       image: image,
       name: this.toolNames[4][i],
       background: this.skillBackground(this.colorService.col.grey.g2, this.colorService.col.grey.g2),
-      border: this.colorService.col.grey.g2
+      border: this.colorService.col.grey.g2,
+      opacity: 1
 
     }));
-  */
+  
 
   }
 
@@ -73,6 +83,7 @@ export class SkillsComponent implements OnInit {
     ['HTML','CSS','Javascript','Typescript','Angular','NodeJS'], // Code
     ['Revizto','Solibri','Revit','Navisworks','ReCap','ArchiCad','ACC','BIMCollab'], // CAD
     ['DaVinci','FinalCut','Premiere'], // Video
+    ['','','','','','','',''] // default toolbar
   ];
 
   toolPictures = [
@@ -113,6 +124,8 @@ export class SkillsComponent implements OnInit {
       this.toolPicPath + 'video/2.svg',
       this.toolPicPath + 'video/3.svg'
     ],
+    // default toolbar
+    ['','','','','','','','']
 
   ];
 
@@ -148,12 +161,12 @@ export class SkillsComponent implements OnInit {
                     opacity: number
                    }[] = [];
 
-  initialborderWidth: string = 'solid 1pt';
+
   toolTimeout: any;
   isHovering: boolean = false;
   lastHoveredIndex: number | null = null;
 
-  onMouseOver(index_item: number) {
+  hoverSkillGraph(index_item: number) {
       // if current index is last index stop / do nothing
       if (index_item === this.lastHoveredIndex) {
           return;
@@ -165,8 +178,14 @@ export class SkillsComponent implements OnInit {
 
       this.lastHoveredIndex = index_item; // set index
 
-      this.categories.forEach(item => (item.borderWidth = this.initialborderWidth));
+      // reset previous hovered skills
+      this.categories.forEach(item => {
+          item.borderWidth = this.initialborderWidth;
+          item.opacity = this.initialOpacity;
+        });
+
       this.categories[index_item].borderWidth = 'solid 2pt';
+      this.categories[index_item].opacity = 1;
 
       this.tool_list_array = []; // clean array
 
@@ -189,9 +208,38 @@ export class SkillsComponent implements OnInit {
         this.toolTimeout = setTimeout(() => {
             this.tool_list_array[index].opacity = 1;
             addToolsWithDelay(index + 1); // add next tool (index)
-        }, 50);
+        }, 80);
       };
 
       addToolsWithDelay(0);
   }
+
+  resetOpacity(index_item: number) {
+      if (index_item !== this.lastHoveredIndex) {
+        this.categories[index_item].opacity = this.initialOpacity;
+    }
+  }
+
+  // TOOL TIP
+  tooltipText: string = '';
+  tooltipVisible: boolean = false;
+  tooltipPosition = { x: 0, y: 0 };
+
+  showTooltip(index_tool: number) {
+      this.tooltipText = this.tool_list_array[index_tool].name;
+      this.tooltipVisible = true;
+  }
+
+  moveTooltip(event: MouseEvent) {
+      // x, y bound to mouseposition
+      this.tooltipPosition = {
+          x: event.clientX + 10,
+          y: event.clientY + 20
+      };
+  }
+
+  hideTooltip() {
+      this.tooltipVisible = false;
+  }
+
 }

@@ -13,7 +13,5 @@ export class SkillGraphComponent {
   @Input() skillBorderColor: string = '';
   @Input() skillBorderWidth: string = '';
 
-
-  
 }
 
