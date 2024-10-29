@@ -55,11 +55,11 @@
                     [ngStyle]="{'top.px': tooltipPosition.y, 'left.px': tooltipPosition.x}">
                     {{ tooltipText }}
                 </div>
-        <!--        <ul class="containerToolPlaceholder">
-                    <li class="placeHolderTool" *ngFor="let i of [0,1,2,3,4,5,6,7]"></li>
-                </ul>   -->
             </ul>
-
+            <ul>
+                <app-tool-box class="toolsPlaceholder" *ngFor="let i of [0,1,2,3,4,5,6,7]">
+                </app-tool-box>
+            </ul>
         </section>
 
         <section class="skills-content">
