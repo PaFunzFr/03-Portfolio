@@ -8,7 +8,7 @@
 }
 
 .topic-background {
-    @include topic-background(calc(50vh + 50vw), $color_blue_2);
+    @include topic-background(auto, $color_blue_2);
     max-height: calc(1300px + 2vw);
 }
 
@@ -19,7 +19,7 @@
 }
 
 .projects {
-    @include topic-layout(calc(50vh + 50vw), $color_blue_2);
+    @include topic-layout(auto, $color_blue_2);
     z-index: 10;
     position: relative;
     max-width: 1000px;
@@ -30,4 +30,69 @@
     position: relative;
     @include line-h(100%, solid);
     z-index: 3;
+}
+
+.project-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style-type: none;
+    height: auto;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: calc(3vh + 3vw);
+    gap: calc(1vh + 1vw) calc(0.6vh + 0.6vw);
+    padding: 0;
+   // margin: 1vh 0 10vh 0;
+    overflow: hidden;
+
+    @media screen and (max-width : 1000px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project {
+        position: relative;
+        width: 100%;
+        padding-top: 100%;
+
+        .project-content {
+            margin: 0;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background: $color_grey_1;
+            text-align: center;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: calc(1vw + 1vh);
+            border-radius: 2vmin;
+
+            .usedTools {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center; 
+                gap: calc(0.2vw + 0.2vh);
+                width: 60%;
+                padding: 0;
+                list-style-type: none;
+
+                .usedToolsIcon {
+                    width: calc(2vh + 2vw);
+                    height: calc(2vh + 2vw);
+                    max-width: 50px;
+                    max-height: 50px;
+                    background: $color_blue_1;
+                    justify-self: center;
+                }
+
+            .project-infos {
+                white-space: nowrap;
+            }
+        }
+    }
+}
 }

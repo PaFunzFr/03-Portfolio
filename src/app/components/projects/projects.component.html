@@ -7,6 +7,25 @@
         <div class="topic-title">PROJECTS</div>
 
         <!-- Container for Project Pictures -->
+         <ul class ="project-list">
+            <li class="project" *ngFor="let i of [0,1,2,3,4,5]"> <!-- background-image here -->
+                <section class="project-content"> <!-- default hidden, shown with mouseover-->
+                    <ul class="usedTools">
+                        <li class="usedToolsIcon"></li>
+                        <li class="usedToolsIcon"></li>
+                        <li class="usedToolsIcon"></li>
+                        <li class="usedToolsIcon"></li>
+                        <li class="usedToolsIcon"></li>
+                    </ul>
+                    <div class="project-infos">
+                        <div class="project-title">Titel Projekt</div>
+                        <div class="project-description">Kurze Beschreibung des Projektes<br>auf zwei Zeilen.</div>
+
+                    </div>
+
+                </section>
+            </li>
+         </ul>
 
     </section>
 
