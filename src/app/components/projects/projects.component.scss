@@ -7,13 +7,8 @@
     @include flex-centered();
 }
 
-.topic-background {
-    @include topic-background(auto, $color_blue_2);
-    max-height: calc(1300px + 2vw);
-}
-
 .topic-title {
-    padding: calc(5vh + 5vw) 0 3vh 0;
+    padding: calc(3vh + 3vw) 0 3vh 0;
     @include topic-title($color_grey_1);
     text-align: center;
 }
@@ -24,8 +19,8 @@
     position: relative;
     max-width: 1000px;
     width: calc(100% + 120px);
-    max-height: calc(1300px + 2vw);
 }
+
 .line {
     position: relative;
     @include line-h(100%, solid);
@@ -46,7 +41,7 @@
    // margin: 1vh 0 10vh 0;
     overflow: hidden;
 
-    @media screen and (max-width : 1000px) {
+    @media screen and (max-width : 804px) {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -56,43 +51,64 @@
         padding-top: 100%;
 
         .project-content {
-            margin: 0;
             position: absolute;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            background: $color_grey_1;
-            text-align: center;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             padding: calc(1vw + 1vh);
+            margin: 0;
             border-radius: 2vmin;
+            background: $color_grey_1;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
 
             .usedTools {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center; 
                 gap: calc(0.2vw + 0.2vh);
-                width: 60%;
+                width: 65%;
                 padding: 0;
                 list-style-type: none;
 
+                @media screen and (max-width: 767px) {
+                    width: 100%;
+                }
+
                 .usedToolsIcon {
-                    width: calc(2vh + 2vw);
-                    height: calc(2vh + 2vw);
+                    width: calc(20px + 1vw); //calc(2vh + 2vw);
+                    height: calc(20px + 1vw); //calc(2vh + 2vw);
                     max-width: 50px;
                     max-height: 50px;
                     background: $color_blue_1;
                     justify-self: center;
-                }
 
-            .project-infos {
-                white-space: nowrap;
+                    @media screen and (max-width: 385px) {
+                        display: none;
+                    }
+                }
             }
         }
     }
 }
+
+.project-infos {
+    
+    .project-title {
+        font-size: $fs_medium;
+    } 
+
+    .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        gap: calc(0.4vw + 0.4vh);
+        padding: 0;
+        list-style-type: none;
+        font-size: $fs_smallest;
+    }
 }
