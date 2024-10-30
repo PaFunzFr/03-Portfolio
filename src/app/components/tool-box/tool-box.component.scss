@@ -7,7 +7,7 @@
 li {
     position: relative;
     padding-top: 100%; // padding hack / aspect ratio 1:1
-    @include graph-background($color_blue_4,$gradient_blue_1);
+    @include graph-background($color_blue_2,$gradient_blue_2);
     border-radius: 2vmin; 
     display: flex;
 

@@ -32,8 +32,6 @@
     position: relative;
     padding-bottom: 3vw; //padding to next section
 
- 
-
     ul {
         position: absolute;
         display: grid;
@@ -45,16 +43,19 @@
         width: 100%;
         height: 100%;
         
+        app-tool-box {
+            z-index: 99;
+        }
         .toolsPlaceholder {
             z-index: 0;
-            opacity: 0.1;
+            opacity: 0.6;
         }
 /*
-        @media screen and (max-width: 400px) {
+        @media screen and (max-width: 450px) {
             grid-template-columns: repeat(4, 1fr);
             grid-row: 1fr;
         } 
-*/
+ */
     }
 }
 
