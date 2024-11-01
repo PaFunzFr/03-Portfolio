@@ -22,7 +22,12 @@
 .welcomeMessage {
 
     position: fixed;
-    max-width: 600px;
+    max-width: 1000px;
+    padding: 0 20px;
+
+    h1 {
+        color: $color_blue_2;
+    }
 
     p {
         font-weight: $fw_thin;

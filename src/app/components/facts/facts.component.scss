@@ -53,7 +53,8 @@
             align-self: center;
 
                 p {
-                    @include topic-text();
+                    @include topic-text($color_grey_2);
+                    margin-bottom: 50px;
                 }
         }
 
