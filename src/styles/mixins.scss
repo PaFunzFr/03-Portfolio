@@ -15,6 +15,12 @@
     font-weight: $fw_thin;
     color: $title_color;
     letter-spacing: 7px;
+
+    @media screen and (min-width: 1200px) {
+        letter-spacing: 1.5pt;
+        line-height: 1.2;
+        font-size: 30pt;
+    }
 }
 
 @mixin topic-layout ($height, $background) { 
@@ -32,11 +38,18 @@
     line-height: 1.5;
     letter-spacing: 2pt;
 
+    @media screen and (min-width: 1200px) {
+        letter-spacing: 1.5pt;
+        line-height: 1.2;
+        font-size: 14pt;
+    }
+
     @media screen and (max-width: 800px) and (max-height: 800px) {
         font-size: $fs_smallest;
     }
 
     @media screen and (max-height: 800px) {
+        letter-spacing: 1.2pt;
         line-height: 1.2;
     }
 }
