@@ -44,71 +44,29 @@
     @media screen and (max-width : 804px) {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .project {
-        position: relative;
-        width: 100%;
-        padding-top: 100%;
-
-        .project-content {
-            position: absolute;
-            display: flex;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: calc(1vw + 1vh);
-            margin: 0;
-            border-radius: 2vmin;
-            background: $color_grey_1;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-
-            .usedTools {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center; 
-                gap: calc(0.2vw + 0.2vh);
-                width: 65%;
-                padding: 0;
-                list-style-type: none;
-
-                @media screen and (max-width: 767px) {
-                    width: 100%;
-                }
-
-                .usedToolsIcon {
-                    width: calc(20px + 1vw); //calc(2vh + 2vw);
-                    height: calc(20px + 1vw); //calc(2vh + 2vw);
-                    max-width: 50px;
-                    max-height: 50px;
-                    background: $color_blue_1;
-                    justify-self: center;
-
-                    @media screen and (max-width: 385px) {
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
 }
 
-.project-infos {
-    
-    .project-title {
-        font-size: $fs_medium;
-    } 
+.buttonMore {
+    @include flex-centered();
+    justify-self: center;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 0.8% 2%;
+    background: $gradient_orange_1;
+    margin-bottom: 5vh;
+    font-size: $fs_medium;
+    font-weight: $fw_thin;
+    color: rgb(244, 229, 213);
+    border-radius: 1vmin;
+    transition: color 0.5s ease, border 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid $color_orange_2;
 
-    .project-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; 
-        gap: calc(0.4vw + 0.4vh);
-        padding: 0;
-        list-style-type: none;
-        font-size: $fs_smallest;
+    &:hover {
+        cursor: pointer;
+        color: $color_blue_2;
+       // color: rgb(238, 220, 201); => Alternative
+        box-shadow: inset 0 0 0.5vmin black;
+        border: 1px solid black;
     }
 }
