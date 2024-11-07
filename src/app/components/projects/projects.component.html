@@ -8,25 +8,11 @@
 
         <!-- Container for Project Pictures -->
          <ul class ="project-list">
-            <li class="project" *ngFor="let i of [0,1,2,3,4,5]"> <!-- background-image here -->
-                <section class="project-content"> <!-- default hidden, shown with mouseover-->
-                    <ul class="usedTools">
-                        <li class="usedToolsIcon"></li>
-                        <li class="usedToolsIcon"></li>
-                        <li class="usedToolsIcon"></li>
-                        <li class="usedToolsIcon"></li>
-                        <li class="usedToolsIcon"></li>
-                    </ul>
-                    <div class="project-infos">
-                        <div class="project-title">Titel Projekt</div>
-                        <ul class="project-links">
-                            <li>CODE</li>
-                            <li>DEMO</li>
-                        </ul>
-                    </div>
-
-                </section>
-            </li>
+            <!-- Project-Cards -->
+            <app-project-card *ngFor="let amount of [0,1,2,3,4,5]"
+                [projectTitle] = "'Marienturm'"
+                [projectImage]="'/assets/img/facts/1.jpg'">
+            </app-project-card>
          </ul>
 
     </section>

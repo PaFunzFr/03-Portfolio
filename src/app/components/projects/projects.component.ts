@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class ProjectsComponent {
 
+  projectImage = '/assets/img/facts/1.jpg';
+
 }

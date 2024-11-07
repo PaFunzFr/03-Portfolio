@@ -1,0 +1,96 @@
+@import '../../styles/variables_color';
+@import '../../styles/variables_font';
+@import '../../styles/mixins';
+
+.project {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2vmin;
+    transition: opacity 0.3s ease, border-radius 0.3s ease;
+    
+    :hover {
+        cursor: pointer;
+        background: rgba(23, 30, 41, 0.7);
+        border-radius: 2vmin;
+    }
+
+    .project-content {
+        position: absolute;
+        display: flex;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: calc(1vw + 1vh);
+        margin: 0;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        
+        :hover {
+            background: none;
+        }
+        // HOVER TRANSITION CONTENT
+        transition: opacity 0.3s ease-in-out;
+
+        .usedTools {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            gap: calc(0.2vw + 0.2vh);
+            width: 65%;
+            padding: 0;
+            list-style-type: none;
+
+            @media screen and (max-width: 767px) {
+                width: 100%;
+            }
+
+            .usedToolsIcon {
+                width: calc(20px + 1vw); //calc(2vh + 2vw);
+                height: calc(20px + 1vw); //calc(2vh + 2vw);
+                max-width: 50px;
+                max-height: 50px;
+                background: $color_blue_1;
+                justify-self: center;
+
+                @media screen and (max-width: 385px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.project-infos {
+    z-index: 4;
+    
+    .project-title {
+        font-size: $fs_medium;
+        color: $color_grey_1;
+    } 
+
+    .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        gap: calc(0.4vw + 0.4vh);
+        padding: 0;
+        list-style-type: none;
+        font-size: $fs_smallest;
+        color: $color_orange_1;
+        font-weight: $fw_bold;
+
+        li {
+            transition: color 0.4s ease;
+        }
+
+        li:hover {
+            color: $color_orange_2;
+        }
+    }
+}

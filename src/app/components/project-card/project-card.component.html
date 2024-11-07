@@ -1,1 +1,26 @@
-<p>project-card works!</p>
+<li class="project"
+    [ngStyle]="{'background-image' : 'url(' + projectImage + ')'}"
+    (mouseover)="showProjectContent()"
+    (mouseleave)="hideProjectContent()"
+    > <!-- background-image here -->
+
+    <section class="project-content"
+    [ngStyle]="{'opacity' : ''+ displayContent +''}"> <!-- default hidden, shown with mouseover-->
+
+        <ul class="usedTools">
+            <li class="usedToolsIcon"  *ngFor="let i of usedTool"
+                [ngStyle]="{'background-image' : 'url(' + usedTool + ')'}"
+                >
+            </li>
+        </ul>
+
+        <div class="project-infos">
+            <div class="project-title">{{projectTitle}}</div>
+            <ul class="project-links">
+                <li [attr.rel]="projectCode">CODE</li>
+                <li [attr.rel]="projectDemo">DEMO</li>
+            </ul>
+        </div>
+
+    </section>
+</li>   
