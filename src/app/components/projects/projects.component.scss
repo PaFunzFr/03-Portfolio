@@ -28,22 +28,38 @@
 }
 
 .project-list {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    list-style-type: none;
-    height: auto;
-    width: 100%;
-    max-width: 1000px;
-    margin-bottom: calc(3vh + 3vw);
-    gap: calc(1vh + 1vw) calc(0.6vh + 0.6vw);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw 2%;
     padding: 0;
-   // margin: 1vh 0 10vh 0;
-    overflow: hidden;
+    margin: 0;
+    margin-bottom: calc(3vh + 3vw);
+    list-style-type: none;
 
-    @media screen and (max-width : 804px) {
-        grid-template-columns: repeat(2, 1fr);
+
+    > app-project-card {
+        flex: 1 1 31%; // 3 rows
+        max-width: 31%; 
+        box-sizing: border-box;
     }
+
+    @media screen and (max-width: 800px) {
+        > app-project-card {
+            flex: 1 1 45%; // 2 rows
+            max-width: 45%;
+        }
+    }
+/* optional for 1 row on small screens 
+    @media screen and (max-width: 389px) {
+        gap: 2.5vh 2%;
+        > app-project-card {
+            flex: 1 1 100%; 
+            max-width: 100%;
+        }
+    }
+*/
+
 }
 
 .buttonMore {
