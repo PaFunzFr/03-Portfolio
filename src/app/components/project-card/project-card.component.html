@@ -17,8 +17,12 @@
         <div class="project-infos">
             <div class="project-title">{{projectTitle}}</div>
             <ul class="project-links">
-                <li [attr.rel]="projectDemo">DEMO</li>
-                <li [attr.rel]="projectCode">CODE</li>
+                <li>
+                    <a [href]="projectUrl" target="_blank">ABOUT</a>
+                </li>
+                <li *ngIf="projectCode">
+                    <a [href]="projectCode" target="_blank">CODE</a>
+                </li>
             </ul>
         </div>
 

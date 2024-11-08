@@ -8,7 +8,7 @@
     padding-top: 100%;
     background-size: cover;
     background-position: center;
-    transition: opacity 0.3s ease, border-radius 0.3s ease;
+    transition: opacity 0.3s ease, border-radius 0.3s ease, filter 0.3s ease;
 
     :hover {
         cursor: pointer;
@@ -82,17 +82,18 @@
         gap: calc(0.4vw + 0.4vh);
         padding: 0;
         list-style-type: none;
-        font-size: $fs_smallest;
-        color: $color_orange_1;
-        letter-spacing: 1.5px;
-        //font-weight: $fw_bold;
-
-        li {
+        
+        a {
+            font-size: $fs_smallest;
+            color: $color_orange_1;
+            letter-spacing: 1.5px;
+            text-decoration: none;
             transition: color 0.4s ease;
-        }
+            //font-weight: $fw_bold;
 
-        li:hover {
-            color: $color_orange_2;
+            &:hover {
+                color: $color_orange_2;
+            }
         }
     }
 }

@@ -10,8 +10,8 @@ export class ProjectCardComponent {
   // project Input
   @Input() projectImage: string = '';
   @Input() projectTitle: string = '';
-  @Input() projectCode: string = '';
-  @Input() projectDemo: string = '';
+  @Input() projectCode: string | undefined;
+  @Input() projectUrl: string = '';
 
   // usedTools Input
   @Input() usedTool: string = '';

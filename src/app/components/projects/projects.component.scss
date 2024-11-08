@@ -37,15 +37,16 @@
     margin-bottom: calc(3vh + 3vw);
     list-style-type: none;
 
-
-    > app-project-card {
+    app-project-card {
         flex: 1 1 31%; // 3 rows
         max-width: 31%; 
         box-sizing: border-box;
+        opacity: 1;
+        transition: opacity 0.6s ease-in;
     }
 
     @media screen and (max-width: 800px) {
-        > app-project-card {
+        app-project-card {
             flex: 1 1 45%; // 2 rows
             max-width: 45%;
         }
