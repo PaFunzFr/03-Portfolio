@@ -5,6 +5,7 @@
 
 .centeredContainer {
     @include flex-centered();
+    @include section-padding();
 }
 
 .topic-title {

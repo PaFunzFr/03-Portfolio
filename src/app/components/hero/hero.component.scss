@@ -51,6 +51,7 @@
     z-index: 10;
     align-items: flex-end;
     bottom: 50%;
+    max-width: 1000px;
 
     .des-title,
     .dev-title {
@@ -121,6 +122,9 @@
     @include topic-text($color_grey_1);
     text-align: center;
 
+    p {
+        @include section-margin();
+    }
 
     // text higlights
     span {
@@ -143,4 +147,5 @@
 .line {
     @include line-h(60%, solid);
     transform: translateY(60vh);
+    max-width: 1000px;
 }
