@@ -29,8 +29,9 @@
         position: relative;
         width: 98%;
         height: auto;
+        max-width: 600px;
         margin: 0 auto;
-        padding-top: calc(5vh + 5vw);
+        padding-top: calc(3vh + 3vw);
         transform-origin: 9% 100%;
         animation: rotatingBike 3s infinite alternate;
     }
@@ -102,17 +103,17 @@
         }
     }
 }
-
 .facts-picture-gallery {
-    display: flex;
+    display: grid;
     width: 100%;
-    height: 200px;
-    z-index: 10;
-    align-self: center;
-    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr); /* 4 Spalten */
+    grid-template-rows: auto;
+    margin-bottom: calc(3vh + 3vw);         
 
-    @media screen and (max-width: 600px) {
-        gap: 3px 6px;
-        width: calc(100% - 20px);
+    @media screen and (max-width: 700px) {
+        grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+        grid-template-rows: repeat(2, auto);
+        gap: 2% 1%;   /* 2 Zeilen */           /* Eine Zeile */
     }
+
 }

@@ -3,8 +3,10 @@
 @import '../../styles/mixins';
 
 .picture-card {
-    width: auto;
-    height: 20vh;
+    display: flex;
+    width: 100%;
+    height: 20vw;
+    max-height: 260px;
     // background-color: $color_blue_2;
     background-size: cover;
     background-image: '';
@@ -12,19 +14,21 @@
     background-repeat: no-repeat;
     border: $color_grey_1 6px solid;
     transition: box-shadow 0.7s ease, transform 0.2s linear;
-    border-radius: 20px;
-
+    @include common-border-radius();
+    box-sizing: border-box;
 
     &:hover {
         box-shadow: 0 3px 5px $color_blue_2;
         cursor: pointer;
         transform: translateY(-2px);
     }
+    
         @media screen and (max-width: 1000px) {
             border: $color_grey_1 4px solid;
-            height: 14vh;
+            height: 20vw;
         }
         @media screen and (max-width: 700px) {
-            height: 10vh;
+            border: $color_grey_1 2px solid;
+            height: 25vw;
         }
 }
