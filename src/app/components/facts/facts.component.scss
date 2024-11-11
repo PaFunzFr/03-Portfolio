@@ -67,6 +67,7 @@
 
 .topic-title {
     @include topic-title($color_blue_2);
+    text-align: left;
 }
 
 .line {

@@ -17,6 +17,7 @@
 .topic-title {
     padding: calc(5vh + 5vw) 0 3vh 0;
     @include topic-title($color_grey_1);
+    text-align: right;
 }
 
 .skills {
