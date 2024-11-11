@@ -107,14 +107,14 @@
 .facts-picture-gallery {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(4, 1fr); /* 4 Spalten */
+    grid-template-columns: repeat(4, 1fr); 
     grid-template-rows: auto;
     margin-bottom: calc(3vh + 3vw);         
 
     @media screen and (max-width: 700px) {
-        grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+        grid-template-columns: repeat(2, 1fr); 
         grid-template-rows: repeat(2, auto);
-        gap: 2% 1%;   /* 2 Zeilen */           /* Eine Zeile */
+        gap: 2% 1%;
     }
 
 }
