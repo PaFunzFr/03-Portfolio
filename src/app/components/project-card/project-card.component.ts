@@ -18,13 +18,13 @@ export class ProjectCardComponent {
   @Input() usedToolsCount: string = '';
 
   // Hover Show project-infos
-  displayContent: string = '0';
+  displayInfo: string = '0';
 
   showProjectContent() {
-    this.displayContent = this.displayContent = '1';
+    this.displayInfo = this.displayInfo = '1';
   };
   hideProjectContent() {
-    this.displayContent = this.displayContent = '0';
+    this.displayInfo = this.displayInfo = '0';
   };
 
 }

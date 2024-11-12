@@ -35,15 +35,13 @@
     gap: 2vw 2%;
     padding: 0;
     margin: 0;
-    margin-bottom: calc(3vh + 3vw);
+    margin-bottom: 2vw;
     list-style-type: none;
 
     app-project-card {
         flex: 1 1 31%; // 3 rows
         max-width: 31%; 
         box-sizing: border-box;
-        opacity: 1;
-        transition: opacity 0.6s ease-in;
     }
 
     @media screen and (max-width: 800px) {
@@ -52,16 +50,14 @@
             max-width: 45%;
         }
     }
-/* optional 1 row on small screens 
+
+    /* optional 1 row on small screens 
     @media screen and (max-width: 389px) {
         gap: 2.5vh 2%;
             app-project-card {
                 flex: 1 1 100%; 
                 max-width: 100%;
-            }
-    }
-*/
-
+            }}*/ 
 }
 
 .buttonMore {
@@ -72,7 +68,7 @@
     height: auto;
     padding: 0.8% 2%;
     background: $gradient_orange_1;
-    margin-bottom: 5vh;
+    margin: calc(1.5vh + 1.5vw) 0 calc(3vh + 3vw) 0;
     font-size: $fs_medium;
     font-weight: $fw_thin;
     color: rgb(244, 229, 213);
@@ -83,8 +79,9 @@
     &:hover {
         cursor: pointer;
         color: $color_blue_2;
-       // color: rgb(238, 220, 201); => Alternative
+        // color: rgb(238, 220, 201); => Alternative
         box-shadow: inset 0 0 0.5vmin black;
         border: 1px solid black;
     }
 }
+

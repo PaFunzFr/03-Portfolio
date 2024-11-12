@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { trigger, state, transition, style, animate, keyframes } from '@angular/animations';
 
 interface projects {
   id: string;
@@ -11,12 +12,33 @@ interface projects {
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrl: './projects.component.scss',
+  animations: [
+    trigger('fadeInOut', [
+      state('hidden', style({ opacity: 0, maxHeight: '0px', overflow: 'hidden' })),
+      state('shown', style({ opacity: 1, maxHeight: '10000px' })),
+  
+      transition('hidden => shown', [
+        animate('2000ms ease', keyframes([
+          style({ opacity: 0, maxHeight: '0px', offset: 0 }),
+          style({ opacity: 0.9, maxHeight: '5000px', offset: 0.5 }),
+          style({ opacity: 1, maxHeight: '10000px', offset: 1 })
+        ]))
+      ]),
+  
+      transition('shown => hidden', [
+        animate('500ms ease', keyframes([
+          style({ opacity: 1, maxHeight: '10000px', offset: 0 }),
+          style({ opacity: 0, maxHeight: '500px', offset: 0.5 }),
+          style({ opacity: 0, maxHeight: '0px', offset: 1 })
+        ]))
+      ])
+    ])
+  ]
 })
 
 export class ProjectsComponent {
 
-  
 allProjects: projects[] = [
   { 
     id: 'arc.001',
@@ -69,7 +91,6 @@ allProjects: projects[] = [
   },
 ]
 
-
 sortedProjects: projects[] = [];
 
 constructor() {
@@ -92,19 +113,20 @@ sortProjects() {
       this.sortedProjects.push(arcProjects[i]);
     }
     i++;
-
   }
 }
 
+get initialProjects(): projects[] {
+  return this.sortedProjects.slice(0, 6);
+}
+
+get moreProjects(): projects[] {
+  return this.sortedProjects.slice(6);
+}
+
 // toogle Show All / Less Button
-showAll: boolean = false;
-
-  get displayedProjects(): projects[] {
-    return this.showAll ? this.sortedProjects : this.sortedProjects.slice(0, 6);
+state: string = 'hidden'; 
+  toggleState() {
+    this.state = this.state === 'hidden' ? 'shown' : 'hidden'; 
   }
-
-  toggleShowAll() {
-    this.showAll = !this.showAll;
-  }
-
 }

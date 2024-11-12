@@ -4,19 +4,34 @@
     <section class="projects">
         <div class="topic-title">PROJECTS</div>
 
-        <!-- Container for Project Pictures -->
+        <!-- Container for initial Projects -->
          <ul class ="project-list">
             <!-- Project-Cards -->
-            <app-project-card *ngFor="let i of displayedProjects;"
-                [projectTitle] = "i.title"
-                [projectImage]="i.image"
-                [projectUrl]= "i.about"
-                [projectCode]= "i.code">
+            <app-project-card *ngFor="let item of initialProjects"
+                class="project-card"
+                [projectTitle] = "item.title"
+                [projectImage]="item.image"
+                [projectUrl]= "item.about"
+                [projectCode]= "item.code"
+                >
             </app-project-card>
          </ul>
 
-         <div class="buttonMore" (click)="toggleShowAll()">
-            {{ showAll ? 'SHOW LESS' : 'SHOW ALL' }}
+        <!-- Container for more Projects -->
+         <ul class ="project-list" [@fadeInOut]="state">
+            <!-- Project-Cards -->
+            <app-project-card *ngFor="let item of moreProjects"
+                class="project-card"
+                [projectTitle] = "item.title"
+                [projectImage]="item.image"
+                [projectUrl]= "item.about"
+                [projectCode]= "item.code"
+                >
+            </app-project-card>
+         </ul>
+
+         <div class="buttonMore" (click)="toggleState()">
+            {{ state === 'hidden' ? 'SHOW ALL' : 'SHOW LESS' }}
           </div>
     </section>
 
