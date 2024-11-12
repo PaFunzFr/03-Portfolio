@@ -29,7 +29,7 @@ interface projects {
       transition('shown => hidden', [
         animate('500ms ease', keyframes([
           style({ opacity: 1, maxHeight: '10000px', offset: 0 }),
-          style({ opacity: 0, maxHeight: '500px', offset: 0.5 }),
+          style({ opacity: 0, maxHeight: '200px', offset: 0.5 }),
           style({ opacity: 0, maxHeight: '0px', offset: 1 })
         ]))
       ])
