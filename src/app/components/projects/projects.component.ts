@@ -13,28 +13,68 @@ interface projects {
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
+
   animations: [
     trigger('fadeInOut', [
-      state('hidden', style({ opacity: 0, maxHeight: '0px', overflow: 'hidden' })),
-      state('shown', style({ opacity: 1, maxHeight: '10000px' })),
+      state('hidden', style({ opacity: 0,
+                              maxHeight: '0px',
+                              filter: 'blur(10px)',
+                              overflow: 'hidden',
+                              transform: 'scaleY(0)'
+                            })),
+      state('shown', style({ opacity: 1,
+                             maxHeight: '10000px',
+                             filter: 'blur(0px)',
+                             transform: 'scaleY(1)',
+                            })),
   
       transition('hidden => shown', [
-        animate('2000ms ease', keyframes([
-          style({ opacity: 0, maxHeight: '0px', offset: 0 }),
-          style({ opacity: 0.9, maxHeight: '5000px', offset: 0.5 }),
-          style({ opacity: 1, maxHeight: '10000px', offset: 1 })
+        animate('600ms ease', keyframes([
+          style({ opacity: 0,
+                  maxHeight: '0px',
+                  filter: 'blur(10px)',
+                  transform: 'scaleY(0)',               
+                  offset: 0
+                }),
+          style({ opacity: 0.2,
+                  maxHeight: '5000px',
+                  filter: 'blur(6px)',
+                  transform: 'scaleY(0.5)', 
+                  offset: 0.5
+                }),
+          style({ opacity: 1,
+                  maxHeight: '10000px',
+                  filter: 'blur(0px)',
+                  transform: 'scaleY(1)', 
+                  offset: 1 
+                })
         ]))
       ]),
   
       transition('shown => hidden', [
-        animate('500ms ease', keyframes([
-          style({ opacity: 1, maxHeight: '10000px', offset: 0 }),
-          style({ opacity: 0, maxHeight: '200px', offset: 0.5 }),
-          style({ opacity: 0, maxHeight: '0px', offset: 1 })
+        animate('600ms ease', keyframes([
+          style({ opacity: 1,
+                  maxHeight: '10000px',
+                  transform: 'scaleY(1)',   
+                  offset: 0
+                }),
+          style({ opacity: 0,
+                  maxHeight: '200px',
+                  filter: 'blur(6px)',
+                  transform: 'scaleY(0.5)',   
+                  offset: 0.5
+                }),
+          style({ opacity: 0,
+                  maxHeight: '0px',
+                  filter: 'blur(10px)',
+                  transform: 'scaleY(0)',   
+                  offset: 1
+                })
         ]))
       ])
     ])
   ]
+
 })
 
 export class ProjectsComponent {
@@ -44,19 +84,19 @@ allProjects: projects[] = [
     id: 'arc.001',
     title: 'Terminal 3',
     image: '/assets/img/projects/airport.png',
-    about: 'https://djh-architekten.de/referenzen/detail/marienturm'
+    about: 'https://www.dreso.com/lu/en/projects/details/fraport-terminal-3-frankfurt'
   },
   { 
     id: 'arc.002',
     title: 'IX FRA18-22',
     image: '/assets/img/projects/datacenter.png',
-    about: 'https://djh-architekten.de/referenzen/detail/marienturm'
+    about: 'https://www.dreso.com/de/aktuelles/details/neckermann-versandzentrale-aus-den-1960ern-wird-zum-colocation-rechenzentrum'
   },
   { 
     id: 'arc.003',
-    title: 'DFB Campus',
+    title: 'Marienturm',
     image: '/assets/img/projects/soccer.png',
-    about: 'https://github.com/example/project1'
+    about: 'https://djh-architekten.de/referenzen/detail/marienturm'
   },
   { 
     id: 'arc.004',

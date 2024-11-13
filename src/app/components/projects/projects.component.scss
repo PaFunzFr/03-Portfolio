@@ -31,12 +31,13 @@
 .project-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 2vw 2%;
     padding: 0;
     margin: 0;
     margin-bottom: 2vw;
     list-style-type: none;
+    transform-origin: top;
 
     app-project-card {
         flex: 1 1 31%; // 3 rows
