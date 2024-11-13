@@ -39,7 +39,8 @@
             "styles": [
               "src/styles.scss",
               "src/styles/variables_color.scss",
-              "src/styles/variables_font.scss"
+              "src/styles/variables_font.scss",
+              "node_modules/aos/dist/aos.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [

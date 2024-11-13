@@ -3,66 +3,70 @@
 <section class="centeredContainer">
 
     <section class="skills">
-        <div class="topic-title">SKILLS</div>
-
-        <section class="containerSkill">
-
-            <section class="graph-lines">
-                <div class="line-v">
-                </div>
-                <div class="lines-h">
-                    <div *ngFor="let i of [0,1,2,3]"></div>
-                </div>    
-            </section>
-
-            <section class="skill-graphs">
-                <app-skill-graph  *ngFor="let item of categories; let index_item = index" 
-                    [skillPercentage]="item.percentage" 
-                    [skillCategory]="item.category"
-                    [skillBorderColor]="item.borderColor"
-                    [skillBackground]="item.background"
-                    [skillBorderWidth]="item.borderWidth"
-                    [ngStyle]="{
-                        'height': item.percentage + '%',
-                        'opacity': item.opacity,
-                        'transition': 'opacity 1s ease'
-                    }"
-                    (mouseover)="hoverSkillGraph(index_item)"
-                    (mouseleave)="resetOpacity(index_item)"
-                >
-                </app-skill-graph>
-            </section>
-
+        <section data-aos="flip-left" data-aos-duration="1500">
+            <div class="topic-title">SKILLS</div>
         </section>
 
-        <section class="tools-list">
-            <ul>
-                <app-tool-box *ngFor="let tool of tool_list_array; let index_tool = index"
-                [tool_image]="tool.image"
-                [tool_name]="tool.name"
-                [tool_background]="tool.background"
-                [tool_border]="tool.border"
-                [ngStyle]="{
-                    'opacity': tool.opacity,
-                    'transition': 'opacity 1s ease'
-                }"
-                (mousemove)="moveTooltip($event)"
-                (mouseover)="showTooltip(index_tool)"
-                (mouseleave)="hideTooltip()"
-                >
-                </app-tool-box>
-                <div class="tooltip" *ngIf="tooltipVisible" 
-                    [ngStyle]="{'top.px': tooltipPosition.y, 'left.px': tooltipPosition.x}">
-                    {{ tooltipText }}
-                </div>
-            </ul>
-            <ul>
-                <app-tool-box class="toolsPlaceholder" *ngFor="let i of [0,1,2,3,4,5,6,7]"
-                [ngStyle]="{
-                    'opacity' : '0.1'
-                }">
-                </app-tool-box>
-            </ul>
+        <section data-aos="zoom-in" data-aos-duration="1500">
+            <section class="containerSkill">
+
+                <section class="graph-lines">
+                    <div class="line-v">
+                    </div>
+                    <div class="lines-h">
+                        <div *ngFor="let i of [0,1,2,3]"></div>
+                    </div>    
+                </section>
+
+                <section class="skill-graphs">
+                    <app-skill-graph  *ngFor="let item of categories; let index_item = index" 
+                        [skillPercentage]="item.percentage" 
+                        [skillCategory]="item.category"
+                        [skillBorderColor]="item.borderColor"
+                        [skillBackground]="item.background"
+                        [skillBorderWidth]="item.borderWidth"
+                        [ngStyle]="{
+                            'height': item.percentage + '%',
+                            'opacity': item.opacity,
+                            'transition': 'opacity 1s ease'
+                        }"
+                        (mouseover)="hoverSkillGraph(index_item)"
+                        (mouseleave)="resetOpacity(index_item)"
+                    >
+                    </app-skill-graph>
+                </section>
+
+            </section>
+
+            <section class="tools-list">
+                <ul>
+                    <app-tool-box *ngFor="let tool of tool_list_array; let index_tool = index"
+                    [tool_image]="tool.image"
+                    [tool_name]="tool.name"
+                    [tool_background]="tool.background"
+                    [tool_border]="tool.border"
+                    [ngStyle]="{
+                        'opacity': tool.opacity,
+                        'transition': 'opacity 1s ease'
+                    }"
+                    (mousemove)="moveTooltip($event)"
+                    (mouseover)="showTooltip(index_tool)"
+                    (mouseleave)="hideTooltip()"
+                    >
+                    </app-tool-box>
+                    <div class="tooltip" *ngIf="tooltipVisible" 
+                        [ngStyle]="{'top.px': tooltipPosition.y, 'left.px': tooltipPosition.x}">
+                        {{ tooltipText }}
+                    </div>
+                </ul>
+                <ul>
+                    <app-tool-box class="toolsPlaceholder" *ngFor="let i of [0,1,2,3,4,5,6,7]"
+                    [ngStyle]="{
+                        'opacity' : '0.1'
+                    }">
+                    </app-tool-box>
+                </ul>
+            </section>
         </section>
 
         <section class="skills-content">

@@ -17,4 +17,5 @@ export class FactsComponent {
     '/assets/img/facts/3.jpg',
     '/assets/img/facts/4.jpg',
   ]
+
 }

@@ -3,23 +3,33 @@
     <div class="topic-background"></div>
 
     <div class="facts">
+
         <div class="facts-bike">
-            <img src="/assets/img/facts_bike.png" alt="Bike Image" class="bike-image">
-            <div class="line"></div>
+
+            <section data-aos="fade-left" data-aos-duration="1500">
+                <img src="/assets/img/facts_bike.png" alt="Bike Image" class="bike-image">
+                <div class="line"></div>
+            </section>
+
+            <section data-aos="fade-right" data-aos-duration="1500">
             <div class="facts-content">
                 <div class="topic-title">RANDOM FACTS</div>
-                    <p>Wenn ich mich nicht meiner Berufung widme findet man mich sehr oft unter freiem Himmel.
+                    <p>
+                        Wenn ich mich nicht meiner Berufung widme findet man mich sehr oft unter freiem Himmel.
                         Graveln, Hiking oder das Festhalten des Erlebten in bewegten Bildern sind mein Instrument um vom Alltag
                         abzuschalten.
                     </p>
-            </div>    
+            </div>
+            </section>    
 
+            <section data-aos="fade-up" data-aos-duration="1000">
             <div class="facts-picture-gallery">
                 <app-picture-card
                         *ngFor="let i of numbers" 
                         [backgroundImage]="factsPictures[i]">
                 </app-picture-card>
             </div>
+            </section>
         </div>
     </div>
 </div>
