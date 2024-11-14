@@ -5,75 +5,74 @@
     <section class="skills">
 
         <!-- Animation on Scroll -->
-        <section data-aos="fade-left" data-aos-duration="1500" data-aos-offset="100" data-aos-anchor-placement="center-center" >
+        <section data-aos="fade-left" data-aos-duration="1500" data-aos-offset="100" data-aos-anchor-placement="center-center">
             <div class="topic-title">SKILLS</div>
         </section>
 
         <!-- Animation on Scroll -->
-        <section data-aos="fade-right" data-aos-duration="1500" data-aos-offset="50" data-aos-anchor-placement="center-center">
-            <section class="containerSkill">
+        <section class="containerSkill" data-aos="zoom-in" data-aos-duration="1500" data-aos-anchor-placement="center-center">
 
-                <section class="graph-lines">
-                    <div class="line-v">
-                    </div>
-                    <div class="lines-h">
-                        <div *ngFor="let i of [0,1,2,3]"></div>
-                    </div>    
-                </section>
-
-                <section class="skill-graphs">
-                    <app-skill-graph  *ngFor="let item of categories; let index_item = index" 
-                        [skillPercentage]="item.percentage" 
-                        [skillCategory]="item.category"
-                        [skillBorderColor]="item.borderColor"
-                        [skillBackground]="item.background"
-                        [skillBorderWidth]="item.borderWidth"
-                        [ngStyle]="{
-                            'height': item.percentage + '%',
-                            'opacity': item.opacity,
-                            'transition': 'opacity 1s ease'
-                        }"
-                        (mouseover)="hoverSkillGraph(index_item)"
-                        (mouseleave)="resetOpacity(index_item)"
-                    >
-                    </app-skill-graph>
-                </section>
-
+            <section class="graph-lines">
+                <div class="line-v">
+                </div>
+                <div class="lines-h">
+                    <div *ngFor="let i of [0,1,2,3]"></div>
+                </div>    
             </section>
 
-            <section class="tools-list">
-                <ul>
-                    <app-tool-box *ngFor="let tool of tool_list_array; let index_tool = index"
-                    [tool_image]="tool.image"
-                    [tool_name]="tool.name"
-                    [tool_background]="tool.background"
-                    [tool_border]="tool.border"
+            <section class="skill-graphs">
+                <app-skill-graph  *ngFor="let item of categories; let index_item = index" 
+                    [skillPercentage]="item.percentage" 
+                    [skillCategory]="item.category"
+                    [skillBorderColor]="item.borderColor"
+                    [skillBackground]="item.background"
+                    [skillBorderWidth]="item.borderWidth"
                     [ngStyle]="{
-                        'opacity': tool.opacity,
+                        'height': item.percentage + '%',
+                        'opacity': item.opacity,
                         'transition': 'opacity 1s ease'
                     }"
-                    (mousemove)="moveTooltip($event)"
-                    (mouseover)="showTooltip(index_tool)"
-                    (mouseleave)="hideTooltip()"
-                    >
-                    </app-tool-box>
-                    <div class="tooltip" *ngIf="tooltipVisible" 
-                        [ngStyle]="{'top.px': tooltipPosition.y, 'left.px': tooltipPosition.x}">
-                        {{ tooltipText }}
-                    </div>
-                </ul>
-                <ul>
-                    <app-tool-box class="toolsPlaceholder" *ngFor="let i of [0,1,2,3,4,5,6,7]"
-                    [ngStyle]="{
-                        'opacity' : '0.1'
-                    }">
-                    </app-tool-box>
-                </ul>
+                    (mouseover)="hoverSkillGraph(index_item)"
+                    (mouseleave)="resetOpacity(index_item)"
+                >
+                </app-skill-graph>
             </section>
+
         </section>
 
         <!-- Animation on Scroll -->
-        <section class="skills-content" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="100">
+        <section class="tools-list" data-aos="zoom-in" data-aos-duration="1500" data-aos-anchor-placement="center-center">
+            <ul>
+                <app-tool-box *ngFor="let tool of tool_list_array; let index_tool = index"
+                [tool_image]="tool.image"
+                [tool_name]="tool.name"
+                [tool_background]="tool.background"
+                [tool_border]="tool.border"
+                [ngStyle]="{
+                    'opacity': tool.opacity,
+                    'transition': 'opacity 1s ease'
+                }"
+                (mousemove)="moveTooltip($event)"
+                (mouseover)="showTooltip(index_tool)"
+                (mouseleave)="hideTooltip()"
+                >
+                </app-tool-box>
+                <div class="tooltip" *ngIf="tooltipVisible" 
+                    [ngStyle]="{'top.px': tooltipPosition.y, 'left.px': tooltipPosition.x}">
+                    {{ tooltipText }}
+                </div>
+            </ul>
+            <ul>
+                <app-tool-box class="toolsPlaceholder" *ngFor="let i of [0,1,2,3,4,5,6,7]"
+                [ngStyle]="{
+                    'opacity' : '0.1'
+                }">
+                </app-tool-box>
+            </ul>
+        </section>
+
+        <!-- Animation on Scroll -->
+        <section class="skills-content" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="100" data-aos-anchor-placement="center-center">
             <p>
                 Mit meiner Erfahrung als Architekt seit 2015 beherrsche ich diverse BIM- und CAD-Tools,
                 darunter die <span class="cad">Autodesk Suite, Revizto & Solibri</span>.
