@@ -120,7 +120,7 @@
 .skills-content {
     position: relative;
     margin-top: 14%;
-    @include topic-text($color_grey_1);
+    @include topic-text($color_grey_1, $fw-ethin);
     /*
     font-weight: $fw-ethin;
     font-size: $fs_small; */

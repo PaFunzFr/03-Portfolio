@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit} from '@angular/core';
 import ScrollReveal from 'scrollreveal';
 import { ColorService } from './services/color.service';
-import AOS from "aos";
+import AOS from "aos"; // inplement animate on scroll library
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,10 @@ export class AppComponent implements OnInit {
   constructor(private colorService: ColorService) {}
 
   ngOnInit() {
-    AOS.init();
+    AOS.init({ // initialize aos library
+      offset: 0, // start, if element is 200px in viewport
+      once: false // repeat
+    });
     this.colorService.setColors();
   }
 

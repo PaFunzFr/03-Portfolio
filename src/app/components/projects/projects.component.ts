@@ -29,7 +29,7 @@ interface projects {
                             })),
   
       transition('hidden => shown', [
-        animate('600ms ease', keyframes([
+        animate('1000ms ease', keyframes([
           style({ opacity: 0,
                   maxHeight: '0px',
                   filter: 'blur(10px)',
@@ -52,7 +52,7 @@ interface projects {
       ]),
   
       transition('shown => hidden', [
-        animate('600ms ease', keyframes([
+        animate('1000ms ease', keyframes([
           style({ opacity: 1,
                   maxHeight: '10000px',
                   transform: 'scaleY(1)',   
@@ -120,6 +120,36 @@ allProjects: projects[] = [
   { 
     id: 'dev.003',
     title: 'First Attempt',
+    image: '/assets/img/projects/coding.png',
+    about: 'https://github.com/example/project1'
+  },
+  { 
+    id: 'dev.004',
+    title: 'HulCinator',
+    image: '/assets/img/projects/coding.png',
+    about: 'https://github.com/example/project1'
+  },
+  { 
+    id: 'dev.004',
+    title: 'HulCinator',
+    image: '/assets/img/projects/coding.png',
+    about: 'https://github.com/example/project1'
+  },
+  { 
+    id: 'dev.004',
+    title: 'HulCinator',
+    image: '/assets/img/projects/coding.png',
+    about: 'https://github.com/example/project1'
+  },
+  { 
+    id: 'dev.004',
+    title: 'HulCinator',
+    image: '/assets/img/projects/coding.png',
+    about: 'https://github.com/example/project1'
+  },
+  { 
+    id: 'dev.004',
+    title: 'HulCinator',
     image: '/assets/img/projects/coding.png',
     about: 'https://github.com/example/project1'
   },

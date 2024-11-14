@@ -49,8 +49,8 @@
     }
 }
 
-@mixin topic-text ($color) { 
-    font-weight: $fw-thin;
+@mixin topic-text ($color, $weight) { 
+    font-weight: $weight;
     font-size: $fs_small;
     color: $color;
     line-height: 1.5;

@@ -119,7 +119,7 @@
     margin-top: calc(61vh);
     padding: 20px;
     align-items: center;
-    @include topic-text($color_grey_1);
+    @include topic-text($color_grey_1, $fw-ethin);
     text-align: center;
 
     p {

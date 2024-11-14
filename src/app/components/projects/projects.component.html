@@ -2,33 +2,40 @@
 <section class="centeredContainer">
 
     <section class="projects">
-        <div class="topic-title">PROJECTS</div>
+        <div class="topic-title" data-aos="fade-down" data-aos-duration="1500" data-aos-anchor-placement="center-top">
+            PROJECTS
+        </div>
 
-        <!-- Container for initial Projects -->
-         <ul class ="project-list">
-            <!-- Project-Cards -->
-            <app-project-card *ngFor="let item of initialProjects"
-                class="project-card"
-                [projectTitle] = "item.title"
-                [projectImage]="item.image"
-                [projectUrl]= "item.about"
-                [projectCode]= "item.code"
-                >
-            </app-project-card>
-         </ul>
+        <!-- Animation on Scroll -->
+        <section data-aos="zoom-in-down" data-aos-duration="1500" data-aos-anchor-placement="center-top">
 
-        <!-- Container for more Projects -->
-         <ul class ="project-list" [@fadeInOut]="state">
-            <!-- Project-Cards -->
-            <app-project-card *ngFor="let item of moreProjects"
-                class="project-card"
-                [projectTitle] = "item.title"
-                [projectImage]="item.image"
-                [projectUrl]= "item.about"
-                [projectCode]= "item.code"
-                >
-            </app-project-card>
-         </ul>
+            <!-- Container for initial Projects -->
+            <ul class ="project-list">
+                <!-- Project-Cards -->
+                <app-project-card *ngFor="let item of initialProjects"
+                    class="project-card"
+                    [projectTitle] = "item.title"
+                    [projectImage]="item.image"
+                    [projectUrl]= "item.about"
+                    [projectCode]= "item.code"
+                    >
+                </app-project-card>
+            </ul>
+
+            <!-- Container for more Projects -->
+            <ul class ="project-list" [@fadeInOut]="state">
+                <!-- Project-Cards -->
+                <app-project-card *ngFor="let item of moreProjects"
+                    class="project-card"
+                    [projectTitle] = "item.title"
+                    [projectImage]="item.image"
+                    [projectUrl]= "item.about"
+                    [projectCode]= "item.code"
+                    >
+                </app-project-card>
+            </ul>
+
+        </section>
 
          <div class="buttonMore" (click)="toggleState()">
             {{ state === 'hidden' ? 'View more' : 'View less' }}

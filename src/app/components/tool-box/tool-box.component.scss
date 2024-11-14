@@ -33,6 +33,7 @@ li {
         .toolName {
             margin: 0 0 -7px 0;
             font-size: $fs-smallest;
+            font-weight: $fw-ethin;
             color: white;
             
             @media screen and (max-width: 1000px) {
