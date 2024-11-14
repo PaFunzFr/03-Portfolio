@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit} from '@angular/core';
 import ScrollReveal from 'scrollreveal';
 import { ColorService } from './services/color.service';
 import AOS from "aos"; // inplement animate on scroll library
+//import Scrollbar from 'smooth-scrollbar'; 241114
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,11 @@ export class AppComponent implements OnInit {
       offset: 0, // start, if element is 200px in viewport
       once: false // repeat
     });
+/* 241114 last edit, continue here, topic: smooth scroll 
+    Scrollbar.init(document.body, {
+      damping: 0.07, 
+    });
+*/
     this.colorService.setColors();
   }
 
