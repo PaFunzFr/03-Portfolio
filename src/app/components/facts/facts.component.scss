@@ -11,10 +11,10 @@
 
 .facts {
     @include section-padding();
+    @include app-max-width();
     display: flex;
     flex-direction: column;
     z-index: 80;
-    max-width: 1000px;
     margin: 0 auto;
 
     .facts-bike {
@@ -71,8 +71,8 @@
 }
 
 .line {
-    display: flex;
     @include line-h(100%, solid);
+    display: flex;
     box-shadow: 0 2px 4px $color_blue_2;
     animation: jumpLine 3s infinite alternate;
         

@@ -15,8 +15,8 @@
     width: 100%;
 
     .topic-title {
-        padding: calc(3vh + 3vw) 0 3vh 0;
         @include topic-title($color_blue_2);
+        padding: calc(3vh + 3vw) 0 3vh 0;
         text-align: center;
     }
 
@@ -37,7 +37,7 @@
 }
 
 .line {
-    position: relative;
     @include line-h(100%, solid);
+    position: relative;
     z-index: 3;
 }

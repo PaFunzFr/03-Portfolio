@@ -8,20 +8,20 @@
 }
 
 .hero {
+    @include flex-centered();
+    @include topic-layout(auto, $gradient_hero);
     z-index: 10;
     position: relative;
     margin-top: 200vh;
-    @include flex-centered();
-    @include topic-layout(auto, $gradient_hero);
     min-height: 100vh;
 }
 
 .heroImages {
+    @include flex-centered();
     position: absolute;
     height: 60vh;
     width: calc(100% + 45vw);
     margin-top: 0;
-    @include flex-centered();
 }
 
 .des-img, .dev-img {
@@ -44,6 +44,7 @@
 
 .hero-titles {
     @include absolute-width-100();
+    @include app-max-width();
     height: 100%;
     display: flex;
     justify-content: center;
@@ -51,7 +52,6 @@
     z-index: 10;
     align-items: flex-end;
     bottom: 50%;
-    max-width: 1000px;
 
     .des-title,
     .dev-title {
@@ -112,14 +112,14 @@
 }
 
 .heroText {
+    @include app-max-width();
+    @include topic-text($color_grey_1, $fw-ethin);
     display: flex;
     position: absolute;
     width: 100%;
-    max-width: 1000px;
     margin-top: calc(61vh);
     padding: 20px;
     align-items: center;
-    @include topic-text($color_grey_1, $fw-ethin);
     text-align: center;
 
     p {

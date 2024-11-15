@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit} from '@angular/core';
+import { Component, HostListener, OnInit, AfterViewInit} from '@angular/core';
 import ScrollReveal from 'scrollreveal';
 import { ColorService } from './services/color.service';
 import AOS from "aos"; // inplement animate on scroll library
@@ -17,14 +17,16 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     AOS.init({ // initialize aos library
-      offset: 0, // start, if element is 200px in viewport
-      once: false // repeat
+      offset: 0, // start, if element is X px in viewport
+      once: false, // repeat
     });
-/* 241114 last edit, continue here, topic: smooth scroll 
-    Scrollbar.init(document.body, {
-      damping: 0.07, 
+
+    // refresh / reload on dynamic resize window
+    window.addEventListener('resize', () => {
+      window.location.reload();
     });
-*/
+
+    // load color variables
     this.colorService.setColors();
   }
 

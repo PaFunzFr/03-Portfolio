@@ -15,20 +15,19 @@
 }
 
 .topic-title {
-    padding: calc(5vh + 5vw) 0 3vh 0;
     @include topic-title($color_grey_1);
+    padding: calc(5vh + 5vw) 0 3vh 0;
     text-align: right;
 }
 
 .skills {
     @include topic-layout(auto, $color_blue_2);
+    @include app-max-width();
     z-index: 10;
     position: relative;
-    max-width: 1000px;
     width: calc(100% + 120px);
     max-height: calc(1300px + 2vw);
 }
-
 
 .tools-list {
     position: relative;
@@ -52,12 +51,11 @@
             z-index: 0;
             opacity: 0.6;
         }
-/*      split up into 2 rows
+        /*split up into 2 rows
         @media screen and (max-width: 450px) {
             grid-template-columns: repeat(4, 1fr);
             grid-row: 1fr;
-        } 
- */
+        }*/
     }
 }
 
@@ -118,12 +116,11 @@
 }
 
 .skills-content {
+    @include topic-text($color_grey_1, $fw-ethin);
     position: relative;
     margin-top: 14%;
-    @include topic-text($color_grey_1, $fw-ethin);
-    /*
-    font-weight: $fw-ethin;
-    font-size: $fs_small; */
+    /*font-weight: $fw-ethin;
+    font-size: $fs_small;*/
     letter-spacing: 3pt;
     margin-bottom: 10vh;
 

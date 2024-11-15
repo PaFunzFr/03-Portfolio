@@ -11,8 +11,8 @@
     transition: opacity 0.3s ease, border-radius 0.3s ease, filter 0.3s ease;
 
     :hover {
-        cursor: pointer;
         @include common-border-radius();
+        cursor: pointer;
         background: linear-gradient(to top, rgba(23, 30, 41, 0.9) 20%, rgba(67, 92, 131, 0.6));
         box-shadow: inset 2px 2px 2vmin rgba(0, 0, 0, 0.9);
     }
@@ -71,7 +71,7 @@
     z-index: 4;
     
     .project-title {
-        font-size: $fs_medium;
+        font-size: $fs_small;
         color: $color_grey_1;
     } 
 
