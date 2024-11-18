@@ -1,12 +1,13 @@
-<li [ngStyle]="{'background': tool_background,
-                    'border' : tool_border + '1px solid'
-}">
-    <div class="content">
-        <div class="toolImage"
-             [ngStyle]="{'background-image': 'url(' + tool_image + ')'}">
-        </div>
-         <div class="toolName">
-            {{tool_name}}
-        </div>
+<li
+  [ngStyle]="{ background: tool_background, border: tool_border + '1px solid' }"
+>
+  <div class="content">
+    <div
+      class="toolImage"
+      [ngStyle]="{ 'background-image': 'url(' + tool_image + ')' }"
+    ></div>
+    <div class="toolName">
+      {{ tool_name }}
     </div>
+  </div>
 </li>

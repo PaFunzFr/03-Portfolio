@@ -1,27 +1,25 @@
-@import '../styles/variables_color';
-@import '../styles/variables_font';
-@import '../styles/mixins';
-
+@import "../styles/variables_color";
+@import "../styles/variables_font";
+@import "../styles/mixins";
 
 .about {
-    @include flex-centered();
-    align-items: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    height: 100vh;
-    width: 100%;
-    font-size: $fs_about2;
-    color: $color_gold_1;
-    letter-spacing: 1.5vw;
-    background: $color_blue_2;
-    overflow: hidden;
-    transition: height 0.2s smooth, opacity 20s ease, filter 5s ease;
+  @include flex-centered();
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  height: 100vh;
+  width: 100%;
+  font-size: $fs_about2;
+  color: $color_gold_1;
+  letter-spacing: 1.5vw;
+  background: $color_blue_2;
+  overflow: hidden;
+  transition: height 0.2s smooth, opacity 20s ease, filter 5s ease;
 
-    p {
-        margin: 0 20%;
-    }
-
+  p {
+    margin: 0 20%;
+  }
 }

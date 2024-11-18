@@ -1,44 +1,42 @@
-
-@import '../../styles/variables_color';
-@import '../../styles/variables_font';
-@import '../../styles/mixins';
-
+@import "../../styles/variables_color";
+@import "../../styles/variables_font";
+@import "../../styles/mixins";
 
 li {
-    @include graph-background($color_blue_2,$gradient_blue_2);
-    position: relative;
-    padding-top: 100%; // padding hack / aspect ratio 1:1
-    border-radius: 2vmin; 
+  @include graph-background($color_blue_2, $gradient_blue_2);
+  position: relative;
+  padding-top: 100%; // padding hack / aspect ratio 1:1
+  border-radius: 2vmin;
+  display: flex;
+
+  .content {
+    position: absolute;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    gap: 7px;
 
-    .content {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: center; 
-        align-items: center;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        gap: 7px;
-
-        .toolImage {
-            width: 55%;
-            height: 55%;
-            background-repeat: no-repeat;
-            filter: sepia(20%);
-        }
-
-        .toolName {
-            margin: 0 0 -7px 0;
-            font-size: $fs-smallest;
-            font-weight: $fw-ethin;
-            color: white;
-            
-            @media screen and (max-width: 1000px) {
-                    display: none;
-                }
-        }
+    .toolImage {
+      width: 55%;
+      height: 55%;
+      background-repeat: no-repeat;
+      filter: sepia(20%);
     }
+
+    .toolName {
+      margin: 0 0 -7px 0;
+      font-size: $fs-smallest;
+      font-weight: $fw-ethin;
+      color: white;
+
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
+    }
+  }
 }

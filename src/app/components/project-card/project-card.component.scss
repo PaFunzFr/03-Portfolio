@@ -1,99 +1,103 @@
-@import '../../styles/variables_color';
-@import '../../styles/variables_font';
-@import '../../styles/mixins';
+@import "../../styles/variables_color";
+@import "../../styles/variables_font";
+@import "../../styles/mixins";
 
 .project {
+  @include common-border-radius();
+  position: relative;
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.3s ease, border-radius 0.3s ease, filter 0.3s ease;
+
+  :hover {
     @include common-border-radius();
-    position: relative;
-    padding-top: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: opacity 0.3s ease, border-radius 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    background: linear-gradient(
+      to top,
+      rgba(23, 30, 41, 0.9) 20%,
+      rgba(67, 92, 131, 0.6)
+    );
+    box-shadow: inset 2px 2px 2vmin rgba(0, 0, 0, 0.9);
+  }
+
+  .project-content {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: calc(1vw + 1vh);
+    margin: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 
     :hover {
-        @include common-border-radius();
-        cursor: pointer;
-        background: linear-gradient(to top, rgba(23, 30, 41, 0.9) 20%, rgba(67, 92, 131, 0.6));
-        box-shadow: inset 2px 2px 2vmin rgba(0, 0, 0, 0.9);
+      background: none;
+      box-shadow: none;
     }
+    // HOVER TRANSITION CONTENT
+    transition: opacity 0.3s ease-in-out;
 
-    .project-content {
-        position: absolute;
-        display: flex;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: calc(1vw + 1vh);
-        margin: 0;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-        
-        :hover {
-            background: none;
-            box-shadow: none;
+    .usedTools {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: calc(0.2vw + 0.2vh);
+      width: 65%;
+      padding: 0;
+      list-style-type: none;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+
+      .usedToolsIcon {
+        width: calc(20px + 1vw); //calc(2vh + 2vw);
+        height: calc(20px + 1vw); //calc(2vh + 2vw);
+        max-width: 50px;
+        max-height: 50px;
+        background: $color_blue_1;
+        justify-self: center;
+
+        @media screen and (max-width: 385px) {
+          display: none;
         }
-        // HOVER TRANSITION CONTENT
-        transition: opacity 0.3s ease-in-out;
-
-        .usedTools {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; 
-            gap: calc(0.2vw + 0.2vh);
-            width: 65%;
-            padding: 0;
-            list-style-type: none;
-
-            @media screen and (max-width: 767px) {
-                width: 100%;
-            }
-
-            .usedToolsIcon {
-                width: calc(20px + 1vw); //calc(2vh + 2vw);
-                height: calc(20px + 1vw); //calc(2vh + 2vw);
-                max-width: 50px;
-                max-height: 50px;
-                background: $color_blue_1;
-                justify-self: center;
-
-                @media screen and (max-width: 385px) {
-                    display: none;
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 .project-infos {
-    z-index: 4;
-    
-    .project-title {
-        font-size: $fs_small;
-        color: $color_grey_1;
-    } 
+  z-index: 4;
 
-    .project-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; 
-        gap: calc(0.4vw + 0.4vh);
-        padding: 0;
-        list-style-type: none;
-        
-        a {
-            font-size: $fs_smallest;
-            color: $color_orange_1;
-            letter-spacing: 1.5px;
-            text-decoration: none;
-            transition: color 0.4s ease;
-            //font-weight: $fw_bold;
+  .project-title {
+    font-size: $fs_small;
+    color: $color_grey_1;
+  }
 
-            &:hover {
-                color: $color_orange_2;
-            }
-        }
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: calc(0.4vw + 0.4vh);
+    padding: 0;
+    list-style-type: none;
+
+    a {
+      font-size: $fs_smallest;
+      color: $color_orange_1;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      transition: color 0.4s ease;
+      //font-weight: $fw_bold;
+
+      &:hover {
+        color: $color_orange_2;
+      }
     }
+  }
 }

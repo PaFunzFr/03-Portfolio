@@ -1,42 +1,41 @@
-@import '../../styles/variables_color';
-@import '../../styles/variables_font';
-@import '../../styles/mixins';
+@import "../../styles/variables_color";
+@import "../../styles/variables_font";
+@import "../../styles/mixins";
 
 header {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    z-index: 99;
-    color: $color_blue_1;
-    font-weight: $fw_bold;
-    letter-spacing: 2pt;
-    line-height: 10pt;
-    height: 60px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 99;
+  color: $color_blue_1;
+  font-weight: $fw_bold;
+  letter-spacing: 2pt;
+  line-height: 10pt;
+  height: 60px;
 
-        div {
-            padding: 0 10px;
-        }
+  div {
+    padding: 0 10px;
+  }
 
-        img {
-            height: 50px;
-        }
-        
-        img:last-child {
-            height: 30px;
-        }
+  img {
+    height: 50px;
+  }
+
+  img:last-child {
+    height: 30px;
+  }
 }
 
 .mainLogo {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 
-    .name {
-        @media screen and (max-width: 1500px) {
-            display: none;
-        }
+  .name {
+    @media screen and (max-width: 1500px) {
+      display: none;
     }
+  }
 }
-

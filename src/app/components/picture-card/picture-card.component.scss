@@ -1,34 +1,34 @@
-@import '../../styles/variables_color';
-@import '../../styles/variables_font';
-@import '../../styles/mixins';
+@import "../../styles/variables_color";
+@import "../../styles/variables_font";
+@import "../../styles/mixins";
 
 .picture-card {
-    @include common-border-radius();
-    display: flex;
-    width: 100%;
-    height: 20vw;
-    max-height: 260px;
-    // background-color: $color_blue_2;
-    background-size: cover;
-    background-image: '';
-    background-position: bottom;
-    background-repeat: no-repeat;
-    border: $color_grey_1 6px solid;
-    transition: box-shadow 0.7s ease, transform 0.2s linear;
-    box-sizing: border-box;
+  @include common-border-radius();
+  display: flex;
+  width: 100%;
+  height: 20vw;
+  max-height: 260px;
+  // background-color: $color_blue_2;
+  background-size: cover;
+  background-image: "";
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border: $color_grey_1 6px solid;
+  transition: box-shadow 0.7s ease, transform 0.2s linear;
+  box-sizing: border-box;
 
-    &:hover {
-        box-shadow: 0 3px 5px $color_blue_2;
-        cursor: pointer;
-        transform: translateY(-2px);
-    }
-    
-        @media screen and (max-width: 1000px) {
-            border: $color_grey_1 4px solid;
-            height: 20vw;
-        }
-        @media screen and (max-width: 700px) {
-            border: $color_grey_1 3px solid;
-            height: 25vw;
-        }
+  &:hover {
+    box-shadow: 0 3px 5px $color_blue_2;
+    cursor: pointer;
+    transform: translateY(-2px);
+  }
+
+  @media screen and (max-width: 1000px) {
+    border: $color_grey_1 4px solid;
+    height: 20vw;
+  }
+  @media screen and (max-width: 700px) {
+    border: $color_grey_1 3px solid;
+    height: 25vw;
+  }
 }

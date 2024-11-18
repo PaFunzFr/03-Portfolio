@@ -1,129 +1,101 @@
-@import '../../styles/variables_color';
-@import '../../styles/variables_font';
-@import '../../styles/mixins';
+@import "../../styles/variables_color";
+@import "../../styles/variables_font";
+@import "../../styles/mixins";
 
 .centeredContainer {
-    @include topic-layout(100%, $color_grey_1);
-    display: flex;
-    position: relative;
-    flex-direction: column;
+  @include topic-layout(100%, $color_grey_1);
+  display: flex;
+  position: relative;
+  flex-direction: column;
 }
 
 .facts {
-    @include section-padding();
-    @include app-max-width();
+  @include section-padding();
+  @include app-max-width();
+  display: flex;
+  flex-direction: column;
+  z-index: 80;
+  margin: 0 auto;
+
+  .facts-bike {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bike-image {
+    position: relative;
+    width: 98%;
+    height: auto;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: calc(3vh + 3vw);
+    transform-origin: 20.8% 100%;
+    animation: rotatingBike 3s infinite alternate;
+  }
+
+  @keyframes rotatingBike {
+    0% {
+      transform: rotate(0deg);
+    }
+    90% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-3deg);
+    }
+  }
+
+  .facts-content {
     display: flex;
     flex-direction: column;
-    z-index: 80;
-    margin: 0 auto;
+    align-self: center;
+    margin-top: 4vmin;
 
-    .facts-bike {
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: top;
-        width: 100%;
-        height: 100%;
+    p {
+      @include topic-text($color_grey_2, $fw-thin);
+      margin-bottom: 50px;
     }
-    
-    .bike-image {
-        position: relative;
-        width: 98%;
-        height: auto;
-        max-width: 600px;
-        margin: 0 auto;
-        padding-top: calc(3vh + 3vw);
-        transform-origin: 9% 100%;
-        animation: rotatingBike 3s infinite alternate;
-    }
-    
-    @keyframes rotatingBike {
-        0% {
-            transform: rotate(0deg);
-        }
-        90% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(-3deg);
-        }
-    }
-    
-    .facts-content {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-        margin-top: 4vmin;
-
-        p {
-            @include topic-text($color_grey_2, $fw-thin);
-            margin-bottom: 50px;
-        }
-    }
+  }
 }
 
 .topic-background {
-    @include topic-background(100%, $color_grey_1);
+  @include topic-background(100%, $color_grey_1);
 }
 
 .topic-title {
-    @include topic-title($color_blue_2);
-    text-align: left;
+  @include topic-title($color_blue_2);
+  text-align: left;
 }
 
 .line {
-    @include line-h(100%, solid);
-    display: flex;
-    box-shadow: 0 2px 4px $color_blue_2;
-    animation: jumpLine 3s infinite alternate;
-        
-    @keyframes jumpLine {
-        0% {
-            transform: translateY(-0.2vmax);
-        }
-        90% {
-            transform: translateY(-0.2vmax);
-        }
-        100% {
-            transform: translateY(-0.4vmax);
-        }
-    }
-
-    @media screen and (max-width: 768px) {
-        animation: jumpLineLessY 3s infinite alternate;
-
-        @keyframes jumpLineLessY {
-            0% {
-                transform: translateY(-0.5vmax);
-            }
-            90% {
-                transform: translateY(-0.5vmax);
-            }
-            100% {
-                transform: translateY(-0.6vmax);
-            }
-        }
-    }
+  @include line-h(100%, solid);
+  display: flex;
+  box-shadow: 0 2px 4px $color_blue_2;
+  transform: translateY(-4px);
 }
+
 .facts-picture-gallery {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(4, 1fr); 
-    grid-template-rows: auto;
-    margin-bottom: calc(3vh + 3vw);         
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  margin-bottom: calc(3vh + 3vw);
 
-    @media screen and (max-width: 700px) {
-        grid-template-columns: repeat(2, 1fr); 
-        grid-template-rows: repeat(2, auto);
-        gap: 2% 1%;
-    }
-
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2% 1%;
+  }
 }
 
 .scroll-text {
-    opacity: 0;
-    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-  }
-  
-  .facts-bike .facts-content .scroll-text[ngStyle] {
-    opacity: 1; /* Set opacity to 1 when transform is being applied */
-  }
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.facts-bike .facts-content .scroll-text[ngStyle] {
+  opacity: 1; /* Set opacity to 1 when transform is being applied */
+}

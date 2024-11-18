@@ -1,30 +1,35 @@
-<li class="project"
-    [ngStyle]="{'background-image' : 'url(' + projectImage + ')'}"
-    (mouseover)="showProjectContent()"
-    (mouseleave)="hideProjectContent()"
-    > <!-- background-image here -->
+<li
+  class="project"
+  [ngStyle]="{ 'background-image': 'url(' + projectImage + ')' }"
+  (mouseover)="showProjectContent()"
+  (mouseleave)="hideProjectContent()"
+>
+  <!-- background-image here -->
 
-    <section class="project-content"
-    [ngStyle]="{'opacity' : ''+ displayInfo +''}"> <!-- default hidden, shown with mouseover-->
+  <section
+    class="project-content"
+    [ngStyle]="{ opacity: '' + displayInfo + '' }"
+  >
+    <!-- default hidden, shown with mouseover-->
 
-        <ul class="usedTools">
-            <li class="usedToolsIcon"  *ngFor="let i of usedTool"
-                [ngStyle]="{'background-image' : 'url(' + usedTool + ')'}"
-                >
-            </li>
-        </ul>
+    <ul class="usedTools">
+      <li
+        class="usedToolsIcon"
+        *ngFor="let i of usedTool"
+        [ngStyle]="{ 'background-image': 'url(' + usedTool + ')' }"
+      ></li>
+    </ul>
 
-        <div class="project-infos">
-            <div class="project-title">{{projectTitle}}</div>
-            <ul class="project-links">
-                <li>
-                    <a [href]="projectUrl" target="_blank">ABOUT</a>
-                </li>
-                <li *ngIf="projectCode">
-                    <a [href]="projectCode" target="_blank">CODE</a>
-                </li>
-            </ul>
-        </div>
-
-    </section>
-</li>   
+    <div class="project-infos">
+      <div class="project-title">{{ projectTitle }}</div>
+      <ul class="project-links">
+        <li>
+          <a [href]="projectUrl" target="_blank">ABOUT</a>
+        </li>
+        <li *ngIf="projectCode">
+          <a [href]="projectCode" target="_blank">CODE</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</li>

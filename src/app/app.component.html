@@ -2,21 +2,21 @@
 <app-landingpage></app-landingpage>
 
 <main>
-    <div class="about" [style.height]="aboutHeight + 'vh'">
-        <p [ngStyle]="{
+  <div class="about" [style.height]="aboutHeight + 'vh'">
+    <p
+      [ngStyle]="{
                 'opacity': aboutOpacity,
                 'transform': 'scale(' + aboutScale + ')',
                 'filter': 'blur(' + aboutBlur + 'px)',
             }"
-        >ABOUT</p>
-    </div>
+    >
+      ABOUT
+    </p>
+  </div>
 
-    <app-hero></app-hero>
-    <app-facts></app-facts>
-    <app-skills></app-skills>
-    <app-projects></app-projects>
-    <app-cv></app-cv>
-    
+  <app-hero></app-hero>
+  <app-facts></app-facts>
+  <app-skills></app-skills>
+  <app-projects></app-projects>
+  <app-cv></app-cv>
 </main>
-
-  
