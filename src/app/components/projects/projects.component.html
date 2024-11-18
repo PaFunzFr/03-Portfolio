@@ -44,9 +44,14 @@
         </app-project-card>
       </ul>
     </section>
-
-    <div class="buttonMore" (click)="toggleState()">
-      {{ state === "hidden" ? "view more" : "view less" }}
-    </div>
+    <section
+      data-aos="zoom-in"
+      data-aos-duration="2000"
+      data-aos-anchor-placement="center-center"
+    >
+      <div class="buttonMore" (click)="toggleState()">
+        {{ state === "hidden" ? "view more" : "view less" }}
+      </div>
+    </section>
   </section>
 </section>

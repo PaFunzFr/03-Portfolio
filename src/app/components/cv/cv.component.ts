@@ -36,11 +36,11 @@ interface timelineProfessional {
         'hoveredText',
         style({
           opacity: 0,
-          transform: 'translateY(-10px)',
+          transform: 'translateY(-100%)',
         })
       ),
-      transition('baseText => hoveredText', [animate('0.3s ease-in')]),
-      transition('hoveredText => baseText', [animate('0.3s ease-out')]),
+      transition('baseText => hoveredText', [animate('0.4s ease-in')]),
+      transition('hoveredText => baseText', [animate('0.4s ease-out')]),
     ]),
     trigger('hoverContent', [
       state(
@@ -54,11 +54,11 @@ interface timelineProfessional {
         'baseText',
         style({
           opacity: 0,
-          transform: 'translateY(10px)',
+          transform: 'translateY(100%)',
         })
       ),
-      transition('baseText => hoveredText', [animate('0.3s ease-in')]),
-      transition('hoveredText => baseText', [animate('0.3s ease-out')]),
+      transition('baseText => hoveredText', [animate('0.4s ease-in')]),
+      transition('hoveredText => baseText', [animate('0.4s ease-out')]),
     ]),
   ],
 })
@@ -69,7 +69,7 @@ export class CvComponent {
       content: 'GERMAN',
     },
     {
-      category: 'WORK',
+      category: 'WORK MODE',
       content: 'REMOTE FIRST',
     },
     {
