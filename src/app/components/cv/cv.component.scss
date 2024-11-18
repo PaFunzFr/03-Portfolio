@@ -21,16 +21,61 @@
 
   .personal-infos {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    gap: 20px;
+    gap: 1.8vw;
+    font-size: $fs_small;
+    color: $color_grey_2;
+    line-height: 0.8;
 
-    p:first-child {
-      font-weight: bold;
-    }
     .info-container {
-      text-align: center;
-      color: $color_grey_2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border-radius: 1vmin;
+      padding: 10px 15px;
+      width: 25%;
+      max-width: 100px;
+      text-wrap: nowrap;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .info-container:first-child {
+      @include graph-background($color_blue_1, $gradient_blue_1);
+    }
+    .info-container:nth-child(2) {
+      @include graph-background($color_orange_1, $gradient_orange_1);
+    }
+    .info-container:nth-child(3) {
+      @include graph-background($color_gold_1, $gradient_gold_1);
+    }
+    .info-container:last-child {
+      @include graph-background($color_blue_2, $gradient_blue_2);
+    }
+  }
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .cvElement {
+    display: flex;
+    align-items: center;
+    gap: 2.5em;
+
+    .cvIconElement {
+      width: 1.5em;
+      height: 1.5em;
+      background: $gradient_blue_2;
+      border: white 1px solid;
+      border-radius: 50%;
     }
   }
 }

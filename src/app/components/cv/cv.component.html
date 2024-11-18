@@ -4,24 +4,40 @@
     <!-- continuing here / creating content -->
 
     <section class="personal-infos">
-      <div class="info-container">
-        <p>Nationality</p>
-        <p>German</p>
+      <div
+        *ngFor="let info of personalInfo; let i = index"
+        class="info-container"
+        (mouseover)="state[i] = 'hoveredText'"
+        (mouseout)="state[i] = 'baseText'"
+        [@hoverState]="state[i]"
+      >
+        <span>{{
+          state[i] === "baseText" ? info.category : info.content
+        }}</span>
+      </div>
+    </section>
+
+    <section class="timeline">
+      <div class="cvTitle">
+        <div class="cvIconTitle"></div>
+        <p>ACADEMIC</p>
       </div>
 
-      <div class="info-container">
-        <p>Work Mode</p>
-        <p>Reomte-First</p>
+      <div class="cvElement" *ngFor="let i of [0, 1, 2, 3, 4]">
+        <p class="cvYear">2000-2024</p>
+        <div class="cvIconElement"></div>
+        <p class="cvInfo">Milestone XYZ</p>
       </div>
 
-      <div class="info-container">
-        <p>Living near</p>
-        <p>Frankfurt</p>
+      <div class="cvTitle">
+        <div class="cvIconTitle"></div>
+        <p>PROFESSIONAL</p>
       </div>
 
-      <div class="info-container">
-        <p>Languages</p>
-        <p>german & english</p>
+      <div class="cvElement" *ngFor="let i of [0, 1, 2, 3, 4]">
+        <p class="cvYear">2000-2024</p>
+        <div class="cvIconElement"></div>
+        <p class="cvInfo">Milestone XYZ</p>
       </div>
     </section>
   </section>
