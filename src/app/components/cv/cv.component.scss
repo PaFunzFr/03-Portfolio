@@ -30,16 +30,32 @@
     line-height: 0.8;
 
     .info-container {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       color: white;
       border-radius: 1vmin;
-      padding: 10px 15px;
+      padding: 15px 15px;
       width: 25%;
       max-width: 100px;
       text-wrap: nowrap;
+      overflow: hidden;
 
+    .base-text,
+    .hover-text {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+    }
+
+    .base-text {
+      opacity: 1;
+    }
+
+    .hover-text {
+      opacity: 0;
+    }
       &:hover {
         cursor: pointer;
       }

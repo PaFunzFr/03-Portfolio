@@ -28,18 +28,37 @@ interface timelineProfessional {
       state(
         'baseText',
         style({
-          transform: 'scale(1)',
-          fontWeight: 'thin',
+          opacity: 1,
+          transform: 'translateY(0)',
         })
       ),
       state(
         'hoveredText',
         style({
-          transform: 'scale(1.1)',
-          fontWeight: 'bold',
+          opacity: 0,
+          transform: 'translateY(-10px)',
         })
       ),
-      transition('baseText <=> hoveredText', [animate('0.4s linear')]),
+      transition('baseText => hoveredText', [animate('0.3s ease-in')]),
+      transition('hoveredText => baseText', [animate('0.3s ease-out')]),
+    ]),
+    trigger('hoverContent', [
+      state(
+        'hoveredText',
+        style({
+          opacity: 1,
+          transform: 'translateY(0)',
+        })
+      ),
+      state(
+        'baseText',
+        style({
+          opacity: 0,
+          transform: 'translateY(10px)',
+        })
+      ),
+      transition('baseText => hoveredText', [animate('0.3s ease-in')]),
+      transition('hoveredText => baseText', [animate('0.3s ease-out')]),
     ]),
   ],
 })

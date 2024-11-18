@@ -9,11 +9,13 @@
         class="info-container"
         (mouseover)="state[i] = 'hoveredText'"
         (mouseout)="state[i] = 'baseText'"
-        [@hoverState]="state[i]"
-      >
-        <span>{{
-          state[i] === "baseText" ? info.category : info.content
-        }}</span>
+      > 
+        <span [@hoverState]="state[i]" class="base-text">
+          {{ info.category }}
+        </span>
+        <span [@hoverContent]="state[i]" class="hover-text">
+          {{ info.content }}
+        </span>
       </div>
     </section>
 
