@@ -9,7 +9,7 @@
         class="info-container"
         (mouseover)="state[i] = 'hoveredText'"
         (mouseout)="state[i] = 'baseText'"
-      > 
+      >
         <span [@hoverState]="state[i]" class="base-text">
           {{ info.category }}
         </span>
@@ -25,10 +25,15 @@
         <p>ACADEMIC</p>
       </div>
 
-      <div class="cvElement" *ngFor="let i of [0, 1, 2, 3, 4]">
-        <p class="cvYear">2000-2024</p>
+      <div
+        class="cvElement"
+        *ngFor="let item of academic; let i = index"
+        [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'"
+        data-aos-duration="2000"
+      >
+        <p class="cvYear">{{ item.years }}</p>
         <div class="cvIconElement"></div>
-        <p class="cvInfo">Milestone XYZ</p>
+        <p class="cvInfo">{{ item.title }}</p>
       </div>
 
       <div class="cvTitle">
@@ -36,11 +41,18 @@
         <p>PROFESSIONAL</p>
       </div>
 
-      <div class="cvElement" *ngFor="let i of [0, 1, 2, 3, 4]">
-        <p class="cvYear">2000-2024</p>
+      <div
+        class="cvElement"
+        *ngFor="let item of professional; let i = index"
+        [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'"
+        data-aos-duration="3000"
+      >
+        <p class="cvYear">{{ item.years }}</p>
         <div class="cvIconElement"></div>
-        <p class="cvInfo">Milestone XYZ</p>
+        <p class="cvInfo">{{ item.title }}</p>
       </div>
+
+      <div class="vLine"></div>
     </section>
   </section>
 </section>

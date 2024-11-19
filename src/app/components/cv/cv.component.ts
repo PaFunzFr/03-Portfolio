@@ -24,6 +24,7 @@ interface timelineProfessional {
   templateUrl: './cv.component.html',
   styleUrl: './cv.component.scss',
   animations: [
+    // <span> no. 1
     trigger('hoverState', [
       state(
         'baseText',
@@ -39,9 +40,10 @@ interface timelineProfessional {
           transform: 'translateY(-100%)',
         })
       ),
-      transition('baseText => hoveredText', [animate('0.4s ease-in')]),
+      transition('baseText => hoveredText', [animate('0.4s 0.2s ease-in')]), // duration 0.4s delay 0.2s
       transition('hoveredText => baseText', [animate('0.4s ease-out')]),
     ]),
+    // <span> no. 2
     trigger('hoverContent', [
       state(
         'hoveredText',
@@ -57,7 +59,7 @@ interface timelineProfessional {
           transform: 'translateY(100%)',
         })
       ),
-      transition('baseText => hoveredText', [animate('0.4s ease-in')]),
+      transition('baseText => hoveredText', [animate('0.4s 0.2s ease-in')]), // duration 0.4s delay 0.2s
       transition('hoveredText => baseText', [animate('0.4s ease-out')]),
     ]),
   ],
@@ -110,8 +112,20 @@ export class CvComponent {
       title: 'BIM Coordination Lead',
     },
     {
-      years: '2022-2024',
+      years: '2020-2024',
       title: 'BIM Coordination',
+    },
+    {
+      years: '2016-2020',
+      title: 'Planer, BIM Coordination',
+    },
+    {
+      years: '2015-2016',
+      title: 'Planer',
+    },
+    {
+      years: '2014-2016',
+      title: 'Tutor statische Systeme',
     },
   ];
 }

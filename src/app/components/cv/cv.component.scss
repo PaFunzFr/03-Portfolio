@@ -2,6 +2,14 @@
 @import "../../styles/variables_font";
 @import "../../styles/mixins";
 
+[data-aos="fade-right"] {
+  transform: translateX(-30%);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(30%);
+}
+
 .centeredContainer {
   @include flex-centered();
 }
@@ -42,20 +50,20 @@
       text-wrap: nowrap;
       overflow: hidden;
 
-    .base-text,
-    .hover-text {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-    }
+      .base-text,
+      .hover-text {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+      }
 
-    .base-text {
-      opacity: 1;
-    }
+      .base-text {
+        opacity: 1;
+      }
 
-    .hover-text {
-      opacity: 0;
-    }
+      .hover-text {
+        opacity: 0;
+      }
       &:hover {
         cursor: pointer;
       }
@@ -76,26 +84,62 @@
 }
 
 .timeline {
+  margin: 5vmin 0;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateX(0%); // optional adjust
+
+  .cvTitle {
+    text-align: center;
+    font-size: $fs_medium_small;
+    color: $color_gold_1;
+    z-index: 2;
+    padding: 10px 0;
+    background: linear-gradient(
+      to top,
+      transparent,
+      $color_grey_1 30%,
+      $color_grey_1 70%,
+      transparent
+    );
+  }
 
   .cvElement {
-    display: flex;
+    @include flex-centered();
+    @include topic-text($color_grey_2, $fw_thin);
     align-items: center;
-    gap: 2.5em;
+    width: 100%;
+    gap: 1em;
+    z-index: 2;
 
+    .cvYear {
+      text-align: right;
+    }
     .cvIconElement {
       width: 1.5em;
       height: 1.5em;
-      background: $gradient_blue_2;
-      border: white 1px solid;
+      @include graph-background($color_blue_2, $gradient_blue_2);
+      border: $color_grey_2 1px solid;
       border-radius: 50%;
+    }
+    .cvYear,
+    .cvInfo {
+      width: 40%;
+      text-wrap: nowrap;
     }
   }
 }
-
+.vLine {
+  position: absolute;
+  margin-top: 3vh;
+  height: calc(100% - 2vh);
+  width: 0.5vmin;
+  background: $color_blue_1;
+  z-index: 1;
+  @include common-border-radius();
+}
 .line {
   @include line-h(100%, solid);
   position: relative;
