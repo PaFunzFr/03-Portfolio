@@ -30,7 +30,7 @@ import { CvComponent } from './components/cv/cv.component';
     SkillGraphComponent,
     ProjectsComponent,
     ProjectCardComponent,
-    CvComponent
+    CvComponent,
   ],
   imports: [
     BrowserModule,
