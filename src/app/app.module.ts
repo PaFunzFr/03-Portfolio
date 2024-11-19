@@ -16,6 +16,7 @@ import { SkillGraphComponent } from './components/skill-graph/skill-graph.compon
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { CvComponent } from './components/cv/cv.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CvComponent } from './components/cv/cv.component';
     ProjectsComponent,
     ProjectCardComponent,
     CvComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

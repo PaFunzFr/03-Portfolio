@@ -1,6 +1,13 @@
 <section class="centeredContainer">
   <section class="projects">
-    <div class="topic-title">CURICULUM VITAE</div>
+    <div
+      class="topic-title"
+      data-aos="fade-up"
+      data-aos-duration="3000"
+      data-aos-anchor-placement="center-center"
+    >
+      CURICULUM VITAE
+    </div>
 
     <section class="personal-infos">
       <div
@@ -8,6 +15,9 @@
         class="info-container"
         (mouseover)="state[i] = 'hoveredText'"
         (mouseout)="state[i] = 'baseText'"
+        data-aos="zoom-in"
+        data-aos-duration="3000"
+        data-aos-anchor-placement="center-center"
       >
         <span [@hoverState]="state[i]" class="base-text">
           {{ info.category }}
@@ -51,11 +61,12 @@
         <p class="cvInfo">{{ item.title }}</p>
       </div>
 
-      <div class="vLine"
+      <div
+        class="vLine"
         data-aos="fade-up"
         data-aos-duration="3000"
-        data-aos-anchor-placement="top-bottom">
-      </div>
+        data-aos-anchor-placement="top-top"
+      ></div>
     </section>
   </section>
 </section>
