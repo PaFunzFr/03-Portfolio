@@ -1,0 +1,29 @@
+@import "../../styles/variables_color";
+@import "../../styles/variables_font";
+@import "../../styles/mixins";
+
+.centeredContainer {
+  @include flex-centered();
+}
+.max-width {
+  @include app-max-width();
+}
+
+.footer {
+  @include app-max-width();
+  @include section-padding();
+  @include flex-centered();
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+
+  .topic-title {
+    @include topic-title($color_blue_2);
+    padding: calc(3vh + 3vw) 0 3vh 0;
+  }
+}
+

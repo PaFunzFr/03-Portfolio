@@ -4,6 +4,7 @@
 
 .centeredContainer {
   @include flex-centered();
+  margin-bottom: 100vh;
 }
 .max-width {
   @include app-max-width();
