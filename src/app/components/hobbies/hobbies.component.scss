@@ -46,6 +46,14 @@
     height: 90px;
     border: 1px solid $color_grey_2;
     border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+    }
+    &.clicked {
+      box-sizing: border-box;
+      box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.5);
+    }
   }
 }
 
@@ -61,20 +69,19 @@
   }
 }
 @media screen and (max-width: 480px) {
-
-    .hobbies-pics {
-        display: grid;
-        width: 60%;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: auto;
-        margin-bottom: calc(1vh + 1vw);
-        gap: 0.25%;
-      }
-    .hobbyButtons {
-      grid-template-columns: repeat(3, 50px);
-      .singleButton {
-        width: 50px;
-        height: 50px;
-      }
+  .hobbies-pics {
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    margin-bottom: calc(1vh + 1vw);
+    gap: 0.25%;
+  }
+  .hobbyButtons {
+    grid-template-columns: repeat(3, 50px);
+    .singleButton {
+      width: 50px;
+      height: 50px;
     }
   }
+}

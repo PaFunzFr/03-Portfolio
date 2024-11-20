@@ -3,24 +3,23 @@
     <div class="topic-title max-width">HOBBIES</div>
 
     <div class="hobbies-pics max-width">
-      <app-picture-card
-        *ngFor="let i of factsPictures"
-        [backgroundImage]="i"
-      >
+      <app-picture-card *ngFor="let i of factsPictures" [backgroundImage]="i">
       </app-picture-card>
     </div>
 
     <div class="hobbyButtons max-width">
-      <div class="singleButton"
-      *ngFor="let i of hobbyIcons"
-      [ngStyle]="{ 'background-image': 'url(' + i + ')',
-        'background-size': '60%',
-        'background-position': 'center',
-        'background-repeat': 'no-repeat'
-       }"
-      
-      >
-    </div>
+      <div
+        class="singleButton"
+        *ngFor="let i of hobbyIcons"
+        [ngStyle]="{
+          'background-image': 'url(' + i + ')',
+          'background-size': '50%',
+          'background-position': 'center',
+          'background-repeat': 'no-repeat'
+        }"
+        [class.clicked]="clickedButton === i"
+        (click)="setActive(i)"
+      ></div>
     </div>
   </section>
 </section>
