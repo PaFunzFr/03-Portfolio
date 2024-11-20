@@ -4,14 +4,15 @@
 
     <div class="hobbies-pics max-width">
       <app-picture-card
-        *ngFor="let i of numbers"
-        [backgroundImage]="factsPictures[i]"
+        *ngFor="let i of factsPictures"
+        [backgroundImage]="i"
       >
       </app-picture-card>
     </div>
 
     <div class="hobbyButtons max-width">
-      <div class="singleButton"></div>
+      <div class="singleButton"
+      *ngFor ="let i of [0,1,2,3,4,5,6]"></div>
     </div>
   </section>
 </section>

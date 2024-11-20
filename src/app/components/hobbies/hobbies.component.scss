@@ -29,20 +29,23 @@
 .hobbies-pics {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   margin-bottom: calc(1vh + 1vw);
-
-  @media screen and (max-width: 700px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 2% 1%;
-  }
+  gap: 0.25%;
 }
 
 .hobbyButtons {
     display: flex;
-    height: 50px;
-    background: red;
     width: 100%;
+    gap: 2%;
+    justify-content: space-around;
+    margin-bottom: calc(3vh + 3vw);
+
+    .singleButton {
+        width: 80px;
+        height: 80px;
+        background: blue;
+        border-radius: 50%;
+    }
 }
