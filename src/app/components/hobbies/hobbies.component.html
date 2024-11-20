@@ -1,13 +1,30 @@
 <section class="centeredContainer">
   <section class="hobbies">
-    <div class="topic-title max-width">HOBBIES</div>
+    <div
+      class="topic-title max-width"
+      data-aos="fade-right"
+      data-aos-duration="1500"
+      data-aos-anchor-placement="center-center"
+    >
+      HOBBIES
+    </div>
 
-    <div class="hobbies-pics max-width">
+    <div
+      class="hobbies-pics max-width"
+      data-aos="fade-left"
+      data-aos-duration="1500"
+      data-aos-anchor-placement="center-center"
+    >
       <app-picture-card *ngFor="let i of factsPictures" [backgroundImage]="i">
       </app-picture-card>
     </div>
 
-    <div class="hobbyButtons max-width">
+    <div
+      class="hobbyButtons max-width"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      data-aos-anchor-placement="bottom-bottom"
+    >
       <div
         class="singleButton"
         *ngFor="let i of hobbyIcons"
