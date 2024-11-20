@@ -13,6 +13,15 @@ export class HobbiesComponent {
     '/assets/img/facts/3.jpg'
   ];
 
+  hobbyIcons = [
+    '/assets/img/hobbies/photography.svg',
+    '/assets/img/hobbies/cycling.svg',
+    '/assets/img/hobbies/dancing.svg',
+    '/assets/img/hobbies/metal.svg',
+    '/assets/img/hobbies/hiking.svg',
+    '/assets/img/hobbies/gaming.svg',
+  ];
+
 
 }
 

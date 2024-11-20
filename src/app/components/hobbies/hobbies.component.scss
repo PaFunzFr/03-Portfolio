@@ -22,7 +22,6 @@
   .topic-title {
     @include topic-title($color_blue_2);
     padding: calc(3vh + 3vw) 0 3vh 0;
-    text-align: center;
   }
 }
 
@@ -36,16 +35,46 @@
 }
 
 .hobbyButtons {
-    display: flex;
-    width: 100%;
-    gap: 2%;
-    justify-content: space-around;
-    margin-bottom: calc(3vh + 3vw);
+  display: grid;
+  grid-template-columns: repeat(6, 90px);
+  width: 100%;
+  margin-bottom: calc(3vh + 3vw);
+  justify-content: space-between;
 
-    .singleButton {
-        width: 80px;
-        height: 80px;
-        background: blue;
-        border-radius: 50%;
-    }
+  .singleButton {
+    width: 90px;
+    height: 90px;
+    border: 1px solid $color_grey_2;
+    border-radius: 50%;
+  }
 }
+
+@media screen and (max-width: 650px) {
+  .hobbyButtons {
+    grid-template-columns: repeat(6, 60px);
+    justify-content: center;
+    gap: 10px;
+    .singleButton {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+
+    .hobbies-pics {
+        display: grid;
+        width: 60%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        margin-bottom: calc(1vh + 1vw);
+        gap: 0.25%;
+      }
+    .hobbyButtons {
+      grid-template-columns: repeat(3, 50px);
+      .singleButton {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
