@@ -1,0 +1,17 @@
+<section class="centeredContainer">
+  <section class="hobbies">
+    <div class="topic-title">HOBBIES</div>
+
+    <div class="hobbies-pics max-width">
+      <app-picture-card
+        *ngFor="let i of numbers"
+        [backgroundImage]="factsPictures[i]"
+      >
+      </app-picture-card>
+    </div>
+
+    <div class="hobbyButtons">
+      <div class="singleButton"></div>
+    </div>
+  </section>
+</section>

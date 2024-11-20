@@ -17,6 +17,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { CvComponent } from './components/cv/cv.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HobbiesComponent } from './components/hobbies/hobbies.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ProjectCardComponent,
     CvComponent,
     FooterComponent,
+    HobbiesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,41 @@
+@import "../../styles/variables_color";
+@import "../../styles/variables_font";
+@import "../../styles/mixins";
+
+.centeredContainer {
+  @include flex-centered();
+}
+.max-width {
+  @include app-max-width();
+}
+
+.hobbies {
+  @include topic-layout(auto, $color_grey_1);
+  @include section-padding();
+  @include flex-centered();
+  z-index: 10;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+
+  .topic-title {
+    @include topic-title($color_blue_2);
+    padding: calc(3vh + 3vw) 0 3vh 0;
+    text-align: center;
+  }
+}
+
+.hobbies-pics {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  margin-bottom: calc(3vh + 3vw);
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2% 1%;
+  }
+}
