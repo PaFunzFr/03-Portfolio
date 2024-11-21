@@ -13,6 +13,25 @@
       ABOUT
     </p>
   </div>
+  <section class="footer"
+  [ngStyle]="{
+                'opacity': footerOpacity,
+  }">
+    <div class="topic-title">Let's get in touch!</div>
+    <ul class="urls">
+      <li class="icon" *ngFor="let item of urlIcons"
+      [ngStyle]="{
+        'background-image': 'url(' + item.icon + ')',
+        'background-size': '50%',
+        'background-position': 'center',
+        'background-repeat': 'no-repeat'
+      }"
+      (click)="navigateToUrl(item.url)"></li>
+    </ul>
+    <div class="copyright">© 2024 Patrick Frey - all rights reserved
+    </div>
+    <div class="video"></div>
+  </section>
 
   <app-hero></app-hero>
   <app-facts></app-facts>
@@ -20,5 +39,4 @@
   <app-projects></app-projects>
   <app-cv></app-cv>
   <app-hobbies></app-hobbies>
-  <!--  <app-footer></app-footer> -->
 </main>

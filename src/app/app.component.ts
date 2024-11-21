@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
   // variables for scroll event
   aboutHeight: number = 0;
   aboutOpacity: number = 0;
+  footerOpacity: number = 0;
   aboutScale: number = 1;
   aboutBlur: number = 80;
   hasRevealed: boolean = false;
@@ -52,19 +53,33 @@ export class AppComponent implements OnInit {
     this.aboutBlur = Math.max(80 - (scrollY / 200) * 10, 0);
 
     if (scrollInVh > 260 && !this.hasRevealed) {
-      this.triggerScrollReveal();
       this.hasRevealed = true;
+    }
+    if (scrollInVh > 600 && this.hasRevealed) {
+      this.aboutOpacity = 0;
+      this.footerOpacity = 1;
+    } else {
+      this.footerOpacity = 0;
     }
   }
 
-  triggerScrollReveal() {
-    ScrollReveal().reveal('.scroll-text', {
-      delay: 100,
-      distance: '100px',
-      origin: 'top',
-      duration: 1000,
-      opacity: 0,
-      easing: 'ease-out',
-    });
+  // footer Icons
+  urlIcons = [
+    {
+      icon: '/assets/img/footer/github.svg',
+      url: 'https://example.com/metal',
+    },
+    {
+      icon: '/assets/img/footer/linkedin.svg',
+      url: 'https://example.com/hiking',
+    },
+    {
+      icon: '/assets/img/footer/komoot.svg',
+      url: 'https://example.com/gaming',
+    },
+  ];
+
+  navigateToUrl(path: string) {
+    window.open(path, '_blank'); // open in new tab
   }
 }
