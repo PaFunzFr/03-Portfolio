@@ -10,6 +10,12 @@
   @include app-max-width();
 }
 
+.line {
+  @include line-h(100%, solid);
+  position: relative;
+  z-index: 3;
+}
+
 .hobbies {
   @include topic-layout(auto, $color_grey_1);
   @include section-padding();
