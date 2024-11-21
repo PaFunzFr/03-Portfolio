@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
     if (scrollInVh > 260 && !this.hasRevealed) {
       this.hasRevealed = true;
     }
-    if (scrollInVh > 600 && this.hasRevealed) {
+    if (scrollInVh > 700 && this.hasRevealed) {
       this.aboutOpacity = 0;
       this.footerOpacity = 1;
     } else {

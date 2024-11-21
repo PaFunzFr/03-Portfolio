@@ -2,6 +2,7 @@
 <app-landingpage></app-landingpage>
 
 <main>
+  <!-- ABOUT -->
   <div class="about" [style.height]="aboutHeight + 'vh'">
     <p
       [ngStyle]="{
@@ -13,26 +14,37 @@
       ABOUT
     </p>
   </div>
-  <section class="footer"
-  [ngStyle]="{
+
+  <!-- FOOTER -->
+  <section
+    class="footer"
+    [ngStyle]="{
                 'opacity': footerOpacity,
-  }">
+  }"
+  >
     <div class="topic-title">Let's get in touch!</div>
     <ul class="urls">
-      <li class="icon" *ngFor="let item of urlIcons"
-      [ngStyle]="{
-        'background-image': 'url(' + item.icon + ')',
-        'background-size': '50%',
-        'background-position': 'center',
-        'background-repeat': 'no-repeat'
-      }"
-      (click)="navigateToUrl(item.url)"></li>
+      <li
+        class="icon"
+        *ngFor="let item of urlIcons"
+        [ngStyle]="{
+          'background-image': 'url(' + item.icon + ')',
+          'background-size': '50%',
+          'background-position': 'center',
+          'background-repeat': 'no-repeat'
+        }"
+        (click)="navigateToUrl(item.url)"
+      ></li>
     </ul>
-    <div class="copyright">© 2024 Patrick Frey - all rights reserved
+    <div class="copyright">© 2024 Patrick Frey - all rights reserved</div>
+    <div>
+      <video autoplay muted loop plays-inline playsinline class="video">
+        <source src="/assets/vid/footer/backgroundloop.mp4" type="video/mp4" />
+      </video>
     </div>
-    <div class="video"></div>
   </section>
 
+  <!-- COMPONENTS -->
   <app-hero></app-hero>
   <app-facts></app-facts>
   <app-skills></app-skills>
