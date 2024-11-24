@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './hobbies.component.scss',
 })
 export class HobbiesComponent {
-  factsPictures = [
+  hobbyPictures = [
     '/assets/img/facts/1.jpg',
     '/assets/img/facts/2.jpg',
     '/assets/img/facts/3.jpg',

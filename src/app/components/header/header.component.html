@@ -1,9 +1,24 @@
 <header>
- <div class="mainLogo">
-    <img src="assets/img/logo_main.svg">
-    <p class="name">Patrick <br> Frey</p>
- </div>
- <div>
-    <img src="assets/img/btn_menu.svg">
- </div>
+  <div class="mainLogo">
+    <img src="assets/img/logo_main.svg" />
+    <p class="name">
+      Patrick <br />
+      Frey
+    </p>
+  </div>
+  <div>
+    <img src="assets/img/btn_menu.svg" (click)="showMenu()" />
+  </div>
 </header>
+
+<section
+  class="navigationBar"
+  [ngStyle]="{
+    opacity: itemOpacity,
+    transform: 'translateX(' + itemPosition + '%)'
+  }"
+>
+  <ul>
+    <li *ngFor="let i of links">{{ i.name }}</li>
+  </ul>
+</section>

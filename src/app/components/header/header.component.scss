@@ -17,6 +17,9 @@ header {
 
   div {
     padding: 0 10px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   img {
@@ -36,6 +39,45 @@ header {
   .name {
     @media screen and (max-width: 1500px) {
       display: none;
+    }
+  }
+}
+
+.navigationBar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background: rgba(222, 222, 222, 0.9);
+  z-index: 98;
+  border-left: 1px solid $color_blue_2;
+  transition: all 0.4s ease;
+  transform: translateX(100%);
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 3vh;
+    padding: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    li {
+      display: flex;
+      width: 80%;
+      height: 5vh;
+      background: $gradient_blue_2;
+      color: $color_gold_1;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
