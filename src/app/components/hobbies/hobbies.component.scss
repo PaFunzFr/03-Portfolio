@@ -4,20 +4,25 @@
 
 .centeredContainer {
   @include flex-centered();
-  margin-bottom: 30vh;
+  margin-bottom: 250px;
 }
 
 .shadow {
   position: relative;
-  transform: translateY(calc(-30vh - 1px));
+  transform: translateY(calc(-250px - 1px));
   width: 100%;
   height: 20vh;
   z-index: 90;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0) 5%,
-    $color_blue_2 100%
-  );
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 5%, $color_blue_2 100%);
+}
+
+@media screen and (min-width: 1200px) {
+  .centeredContainer {
+    margin-bottom: 30vh;
+  }
+  .shadow {
+    transform: translateY(calc(-30vh - 1px));
+  }
 }
 
 .max-width {
