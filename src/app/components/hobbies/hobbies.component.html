@@ -16,7 +16,10 @@
       data-aos-duration="1500"
       data-aos-anchor-placement="center-center"
     >
-      <app-picture-card *ngFor="let i of hobbyPictures" [backgroundImage]="i">
+      <app-picture-card
+        *ngFor="let picture of activePictures"
+        [backgroundImage]="picture"
+      >
       </app-picture-card>
     </div>
 
@@ -28,15 +31,15 @@
     >
       <div
         class="singleButton"
-        *ngFor="let i of hobbyIcons"
+        *ngFor="let hobby of hobbyPictures"
         [ngStyle]="{
-          'background-image': 'url(' + i + ')',
+          'background-image': 'url(' + hobby.icon + ')',
           'background-size': '50%',
           'background-position': 'center',
           'background-repeat': 'no-repeat'
         }"
-        [class.clicked]="clickedButton === i"
-        (click)="setActive(i)"
+        [class.clicked]="clickedButton === hobby.name"
+        (click)="setActive(hobby.name)"
       ></div>
     </div>
   </section>
