@@ -14,8 +14,10 @@ header {
   letter-spacing: 2pt;
   line-height: 10pt;
   height: 60px;
+  pointer-events: none;
 
   div {
+    pointer-events: auto;
     padding: 0 10px;
     &:hover {
       cursor: pointer;

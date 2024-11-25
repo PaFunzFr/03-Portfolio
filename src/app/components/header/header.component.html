@@ -1,13 +1,13 @@
 <header>
   <div class="mainLogo" [routerLink]="['/']" fragment="top">
-    <img src="assets/img/logo_main.svg">
+    <img src="assets/img/logo_main.svg" />
     <p class="name">
       Patrick <br />
       Frey
     </p>
   </div>
   <div>
-    <img src="assets/img/btn_menu.svg" (click)="showMenu()" />
+    <img class="btn_menu" src="assets/img/btn_menu.svg" (click)="showMenu()" />
   </div>
 </header>
 
@@ -19,8 +19,8 @@
   }"
 >
   <ul>
-    <li *ngFor="let i of links"
-    [routerLink]="['/']"
-    [fragment]="i.link">{{ i.name }}</li>
+    <li *ngFor="let i of links" [routerLink]="['/']" [fragment]="i.link">
+      {{ i.name }}
+    </li>
   </ul>
 </section>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 interface links {
   name: string;
@@ -21,7 +21,7 @@ export class HeaderComponent {
     { name: 'CONTACT', link: 'contact' },
   ];
 
-// menuButton functionality
+  // menuButton functionality
   itemOpacity: string = '0';
   itemPosition: string = '100';
   navigationBar: HTMLElement | null = null;
@@ -29,5 +29,18 @@ export class HeaderComponent {
   showMenu() {
     this.itemOpacity = this.itemOpacity === '0' ? '1' : '0';
     this.itemPosition = this.itemOpacity === '0' ? '100' : '0';
+  }
+
+  @HostListener('document:click', ['$event'])
+  closeMenu(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (
+      !target.closest('.navigationBar') && // if click is outsite button or bar
+      !target.closest('.btn_menu') &&
+      this.itemOpacity === '1' // = menu opened
+    ) {
+      this.itemOpacity = '0';
+      this.itemPosition = '100';
+    }
   }
 }
