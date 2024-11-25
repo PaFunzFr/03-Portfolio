@@ -68,7 +68,7 @@ export class HobbiesComponent {
     },
   ];
 
-  /* configured images as inital pictures
+  /* OLD - configured images as initial pictures
   initialPictures: string[] = [
     this.hobbyPictures[1].pictures[0],
     this.hobbyPictures[0].pictures[1],
@@ -78,7 +78,7 @@ export class HobbiesComponent {
 
   // randomize initial pictures
   getRandomUniquePictures(): string[] {
-    const allPictures = this.hobbyPictures.flatMap((hobby) => hobby.pictures); // Alle Bilder in eine flache Liste packen
+    const allPictures = this.hobbyPictures.flatMap((hobby) => hobby.pictures);
     const selectedPictures: Set<string> = new Set();
 
     while (selectedPictures.size < 3) {
@@ -86,7 +86,7 @@ export class HobbiesComponent {
       selectedPictures.add(allPictures[randomIndex]);
     }
 
-    return Array.from(selectedPictures); // Set in ein Array umwandeln
+    return Array.from(selectedPictures); // create new array
   }
 
   initialPictures: string[] = this.getRandomUniquePictures();
