@@ -76,6 +76,7 @@ export class HobbiesComponent {
   ];
 */
 
+
   // randomize initial pictures
   getRandomUniquePictures(): string[] {
     const allPictures = this.hobbyPictures.flatMap((hobby) => hobby.pictures);
