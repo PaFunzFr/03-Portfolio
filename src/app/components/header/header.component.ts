@@ -11,14 +11,14 @@ interface links {
 })
 export class HeaderComponent {
   links: links[] = [
-    { name: 'HOME', link: '/' },
-    { name: 'ABOUT', link: '/about' },
-    { name: 'FACTS', link: '/facts' },
-    { name: 'SKILLS', link: '/skills' },
-    { name: 'PROJECTS', link: '/projects' },
-    { name: 'CV', link: '/cv' },
-    { name: 'HOBBIES', link: '/hobbies' },
-    { name: 'CONTACT', link: '/contact' },
+    { name: 'HOME', link: 'top' },
+    { name: 'ABOUT', link: 'about' },
+    { name: 'FACTS', link: 'facts' },
+    { name: 'SKILLS', link: 'skills' },
+    { name: 'PROJECTS', link: 'projects' },
+    { name: 'CV', link: 'cv' },
+    { name: 'HOBBIES', link: 'hobbies' },
+    { name: 'CONTACT', link: 'contact' },
   ];
 
 // menuButton functionality

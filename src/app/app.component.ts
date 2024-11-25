@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, AfterViewInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import ScrollReveal from 'scrollreveal';
 import { ColorService } from './services/color.service';
 import AOS from 'aos'; // inplement animate on scroll library

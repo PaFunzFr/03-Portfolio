@@ -1,6 +1,6 @@
 <header>
-  <div class="mainLogo">
-    <img src="assets/img/logo_main.svg" />
+  <div class="mainLogo" [routerLink]="['/']" fragment="top">
+    <img src="assets/img/logo_main.svg">
     <p class="name">
       Patrick <br />
       Frey
@@ -19,6 +19,8 @@
   }"
 >
   <ul>
-    <li *ngFor="let i of links">{{ i.name }}</li>
+    <li *ngFor="let i of links"
+    [routerLink]="['/']"
+    [fragment]="i.link">{{ i.name }}</li>
   </ul>
 </section>
