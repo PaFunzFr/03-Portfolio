@@ -97,7 +97,7 @@
 @media screen and (max-width: 480px) {
   .hobbies-pics {
     display: grid;
-    width: 60%;
+    width: 80%;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: auto;
     margin-bottom: calc(2.5vh + 2.5vw);

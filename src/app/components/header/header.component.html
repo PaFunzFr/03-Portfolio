@@ -19,7 +19,12 @@
   }"
 >
   <ul>
-    <li *ngFor="let i of links" [routerLink]="['/']" [fragment]="i.link">
+    <li
+      class="btn_single"
+      *ngFor="let i of links"
+      [routerLink]="['/']"
+      [fragment]="i.link"
+    >
       {{ i.name }}
     </li>
   </ul>

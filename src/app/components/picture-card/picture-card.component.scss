@@ -10,7 +10,7 @@
   // background-color: $color_blue_2;
   background-size: cover;
   background-image: "";
-  background-position: bottom;
+  background-position: center;
   background-repeat: no-repeat;
   border: $color_grey_1 6px solid;
   transition: box-shadow 0.7s ease, transform 0.2s linear;
@@ -28,6 +28,6 @@
   }
   @media screen and (max-width: 700px) {
     border: $color_grey_1 3px solid;
-    height: 25vw;
+    height: 40vw;
   }
 }

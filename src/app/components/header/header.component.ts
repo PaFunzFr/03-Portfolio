@@ -35,12 +35,21 @@ export class HeaderComponent {
   closeMenu(event: MouseEvent) {
     const target = event.target as HTMLElement;
     if (
-      !target.closest('.navigationBar') && // if click is outsite button or bar
+      // if clicking outsite NavBar
+      !target.closest('.navigationBar') &&
       !target.closest('.btn_menu') &&
-      this.itemOpacity === '1' // = menu opened
+      this.itemOpacity === '1'
     ) {
+      // close NavBar
       this.itemOpacity = '0';
       this.itemPosition = '100';
+    }
+    if (target.closest('.btn_single')) {
+      // if clicking button
+      setTimeout(() => {
+        this.itemOpacity = '0';
+        this.itemPosition = '100';
+      }, 300); // close NavBar with 300ms delay
     }
   }
 }
