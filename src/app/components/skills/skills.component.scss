@@ -43,11 +43,16 @@
     height: 100%;
 
     app-tool-box {
-      z-index: 99;
+      z-index: 50;
+      pointer-events: auto;
+      &:hover {
+        cursor: pointer;
+      }
     }
     .toolsPlaceholder {
       z-index: 0;
       opacity: 0.6;
+      pointer-events: none;
     }
     /*split up into 2 rows
         @media screen and (max-width: 450px) {

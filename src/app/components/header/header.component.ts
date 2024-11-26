@@ -50,6 +50,12 @@ export class HeaderComponent {
         this.itemOpacity = '0';
         this.itemPosition = '100';
       }, 300); // close NavBar with 300ms delay
+    } else {
+      // if you do not click close NavBar after
+      setTimeout(() => {
+        this.itemOpacity = '0';
+        this.itemPosition = '100';
+      }, 5000); // 5sec
     }
   }
 }

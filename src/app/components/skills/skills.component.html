@@ -55,6 +55,7 @@
     >
       <ul>
         <app-tool-box
+          class="tools"
           *ngFor="let tool of tool_list_array; let index_tool = index"
           [tool_image]="tool.image"
           [tool_name]="tool.name"
@@ -69,16 +70,6 @@
           (mouseleave)="hideTooltip()"
         >
         </app-tool-box>
-        <div
-          class="tooltip"
-          *ngIf="tooltipVisible"
-          [ngStyle]="{
-            'top.px': tooltipPosition.y,
-            'left.px': tooltipPosition.x
-          }"
-        >
-          {{ tooltipText }}
-        </div>
       </ul>
       <ul>
         <app-tool-box
@@ -116,3 +107,15 @@
     </section>
   </section>
 </section>
+
+<!-- tool tip (fixed)-->
+<div
+  class="tooltip"
+  *ngIf="tooltipVisible"
+  [ngStyle]="{
+    'top.px': tooltipPosition.y,
+    'left.px': tooltipPosition.x
+  }"
+>
+  {{ tooltipText }}
+</div>
