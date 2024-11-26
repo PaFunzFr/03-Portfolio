@@ -41,7 +41,7 @@ export class SkillsComponent implements OnInit {
         opacity: this.initialOpacity,
       },
       { 
-        percentage: '30',
+        percentage: '40',
         category: 'Code',
         borderColor: this.colorService.col.orange.o2,
         background: this.skillBackground(this.colorService.col.orange.o1, this.colorService.col.orange.o2),
